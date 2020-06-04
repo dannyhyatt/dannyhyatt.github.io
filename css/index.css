@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Dusha';
+    src: url('../asset/font/Dusha.ttf');
+}
+
+.dusha {
+    font-family: 'Dusha', Arial, sans-serif;
+}
+
+.courier {
+    font-family: "Courier 10 Pitch", monospace;
+}
+
+html, body {
+    height: 100%;
+}
+
+.bg-circle {
+    height: 300%;
+    margin-left: -75%;
+    margin-top: -150%;
+    border-radius: 0 100% 100% 0;
+    /*width: 100%;*/
+}
+
+.bg-circle-container {
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    width: 60%;
+    min-width: 435px;
+}
+
+.h100 {
+    height: 100%;
+}
+
+#insta-btn {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    color: white;
+    border-color: transparent;
+}
+
+.button {
+    margin-right: 4px;
+    margin-top: 8px;
+}

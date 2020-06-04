@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+
+<div class="bg-circle-container is-three-fifths">
+    <div class="bg-circle"></div>
+</div>
+<section class="section h100">
+    <div class="columns is-desktop h100 is-vcentered">
+        <div class="column is-four-fifths">
+            <h1 class="title is-2">
+                Hi, I'm Danny Hyatt
+            </h1>
+            <h1 class="subtitle is-4">
+                <span class="dusha">soccer player</span> & <span class="courier">programmer</span>
+            </h1>
+            <p class="subtitle">
+                Let's get to the point:
+            </p>
+            <div>
+                <a class="button is-rounded is-outlined is-large is-inverted" target="_blank" href="https://github.com/dannyhyatt">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>GitHub</span>
+                </a>
+                <a class="button is-rounded is-outlined is-large is-inverted" target="_blank" href="https://instagram.com/dannyhyatt_" id="insta-btn">
+                    <span class="icon">
+                      <i class="fab fa-instagram"></i>
+                    </span>
+                    <span>Instagram</span>
+                </a>
+                <a class="button is-rounded is-outlined is-large is-inverted" target="_blank" href="mailto:dannyyyyofficial@gmail.com">
+                    <span class="icon">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                    <span>Mail</span>
+                </a>
+            </div>
+        </div>
+        <div class="column">
+            <p><!--me--></p>
+        </div>
+    </div>
+</section>
+<script>
+    Array.prototype.forEach.call(document.getElementsByClassName('bg-circle'), function(e) {
+        let css = 'linear-gradient(45deg, ' + getColor() + ', ' + getColor() + ')'
+        console.log(css);
+        e.style.backgroundImage = css;
+        e.style.backgroundColor = 'red';
+        console.log(e.style);
+    });
+
+    function getColor(){
+        return "hsl(" + 360 * Math.random() + ',' +
+            (25 + 70 * Math.random()) + '%,' +
+            (70 + 10 * Math.random()) + '%)'
+    }
+</script>
+</body>
+</html>
