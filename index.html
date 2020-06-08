@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>Danny Hyatt</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="/css/index.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 <body>
@@ -15,39 +15,70 @@
 </div>
 <section class="section h100">
     <div class="columns is-desktop h100 is-vcentered">
-        <div class="column is-four-fifths">
+        <div class="column is-three-fifths">
             <h1 class="title is-2">
                 Hi, I'm Danny Hyatt
             </h1>
             <h1 class="subtitle is-4">
                 <span class="dusha">soccer player</span> & <span class="courier">programmer</span>
             </h1>
-            <p class="subtitle">
-                Let's get to the point:
-            </p>
             <div>
-                <a class="button is-rounded is-outlined is-large is-inverted" target="_blank" href="https://github.com/dannyhyatt">
+                <a class="button is-rounded is-outlined is-large is-inverted is-black" target="_blank" href="https://github.com/dannyhyatt">
                     <span class="icon">
-                      <i class="fab fa-github"></i>
+                      <i class="fab fa-github fa-lg"></i>
                     </span>
                     <span>GitHub</span>
                 </a>
-                <a class="button is-rounded is-outlined is-large is-inverted" target="_blank" href="https://instagram.com/dannyhyatt_" id="insta-btn">
+                <a class="button is-rounded is-outlined is-large is-inverted is-white" target="_blank" href="https://instagram.com/dannyhyatt_" id="insta-btn">
                     <span class="icon">
-                      <i class="fab fa-instagram"></i>
+                      <i class="fab fa-instagram fa-lg"></i>
                     </span>
                     <span>Instagram</span>
                 </a>
-                <a class="button is-rounded is-outlined is-large is-inverted" target="_blank" href="mailto:dannyyyyofficial@gmail.com">
+                <a class="button is-rounded is-outlined is-large is-inverted is-black" target="_blank" href="mailto:dannyyyyofficial@gmail.com">
                     <span class="icon">
                       <i class="fas fa-envelope"></i>
                     </span>
-                    <span>Mail</span>
+                    <span>Email</span>
+                </a>
+                <a class="button is-rounded is-outlined is-large is-inverted is-white" target="_blank" href="https://medium.com/@dannyyyyofficial">
+                    <span class="icon is-medium">
+                      <i class="fab fa-medium fa-lg"></i>
+                    </span>
+                    <span>Medium</span>
+                </a>
+                <a class="button is-rounded is-outlined is-large is-inverted is-black" target="_blank" href="">
+                    <span class="icon">
+                      <i class="fas fa-file"></i>
+                    </span>
+                    <span>Resume</span>
+                </a>
+                <a class="button is-rounded is-outlined is-large is-inverted is-white" target="_blank" href="https://venmo.com/dannyhy" id='venmo-btn'>
+                    <span class="icon is-medium">
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <svg fill='black' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            viewBox="0 0 162 162" style="enable-background:new 0 0 162 162;" xml:space="preserve">
+                            <path class="st0" d="M136.8,14.9c4.8,8,7,16.2,7,26.6c0,33.2-28.3,76.2-51.3,106.5H40L19,22.1l46-4.4l11.1,89.6
+                                c10.4-16.9,23.2-43.6,23.2-61.7c0-9.9-1.7-16.7-4.4-22.3L136.8,14.9z"/>
+                        </svg>
+                    </span>
+                    <span>Venmo</span>
+                </a>
+                <a class="button is-rounded is-outlined is-large is-inverted is-black" target="_blank" href="/projects">
+                    <span class="icon">
+                      <i class="fas fa-code"></i>
+                    </span>
+                    <span>Projects</span>
                 </a>
             </div>
         </div>
-        <div class="column">
-            <p><!--me--></p>
+        <div class="column is-two-fifths columns">
+            <div class="column is-one-fifth is-hidden-touch"></div>
+            <div class="column is-four-fifths">
+                <figure class="image">
+                    <img src="asset/img/profile.jpg" class="is-rounded">
+                </figure>
+            </div>
         </div>
     </div>
 </section>
@@ -63,7 +94,7 @@
     function getColor(){
         return "hsl(" + 360 * Math.random() + ',' +
             (25 + 70 * Math.random()) + '%,' +
-            (70 + 10 * Math.random()) + '%)'
+            (60 + 10 * Math.random()) + '%)'
     }
 </script>
 </body>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Danny Hyatt</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+
+<div class="bg-circle-container is-three-fifths">
+    <div class="bg-circle"></div>
+</div>
+<section class="section h100">
+    <h1 class="title is-2">
+        My Projects
+    </h1>
+
+    <div class="columns is-desktop h80 is-vcentered">
+        <div class="column is-three-fifths-desktop">
+            <div class="tile is-ancestor">
+                <div class="column is-one-third">
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <figure class="image is-4by4">
+                        <img src="https://mcps.app/logo.png">
+                        </figure>
+                        <p class="title"><a href="https://mcps.app" class="subtle-link">MCPS Sidekick</a></p>
+                    <p class="subtitle">A mobile app to view and calculate grades for MCPS Students.</p>
+                    <div class="row"><img src="/asset/img/flutter.svg" class="language-icon"></div>
+                    </article>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="columns is-desktop h100 is-vcentered">
+        <div class="column is-one-quarter">
+            <div>
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by4">
+                    <img src="https://mcps.app/logo.png" alt="Placeholder image">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <p class="title is-4">MCPS Sidekick</p>
+                    </div>
+
+                    <div class="content">
+                        A grades checking and calculator mobile app for MCPS students.
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="column is-one-quarter">
+            <div>
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by4">
+                    <img src="https://mcps.app/logo.png" alt="Placeholder image">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <p class="title is-4">MCPS Sidekick</p>
+                    </div>
+
+                    <div class="content">
+                        A grades checking and calculator mobile app for MCPS students.
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+</section>
+<script>
+    Array.prototype.forEach.call(document.getElementsByClassName('bg-circle'), function(e) {
+        let css = 'linear-gradient(45deg, ' + getColor() + ', ' + getColor() + ')'
+        console.log(css);
+        e.style.backgroundImage = css;
+        e.style.backgroundColor = 'red';
+        console.log(e.style);
+    });
+
+    function getColor(){
+        return "hsl(" + 360 * Math.random() + ',' +
+            (25 + 70 * Math.random()) + '%,' +
+            (60 + 10 * Math.random()) + '%)'
+    }
+</script>
+</body>
+</html>
