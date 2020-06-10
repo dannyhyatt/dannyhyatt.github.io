@@ -7,12 +7,11 @@
     font-family: 'Dusha', Arial, sans-serif;
 }
 
-.courier {
-    font-family: "Courier 10 Pitch", monospace;
-}
-
 html, body {
     height: 100%;
+}
+.courier {
+    font-family: "Courier 10 Pitch", monospace;
 }
 
 .bg-circle {
@@ -28,6 +27,22 @@ html, body {
     position: absolute;
     z-index: -1;
     min-width: 630px;
+}
+
+@media only screen and (max-width: 630px) {
+    .bg-circle-container, .bg-circle {
+        display: none;
+    }
+    .is-large {
+        font-size: 1.25rem !important;
+    }
+
+    html, body {
+        height: unset;
+    }
+}
+.min-h-100 {
+    min-height: 100%;
 }
 
 .h100 {
@@ -61,6 +76,11 @@ html, body {
 
 #venmo-btn:hover svg, #venmo-btn:active svg, #venmo-btn:focus svg {
     fill: white;
+}
+
+#venmo-svg {
+    width: 1.5em;
+    height: 1.5em;
 }
 
 .language-icon {

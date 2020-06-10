@@ -6,12 +6,16 @@
     <title>Danny Hyatt</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
     <link rel="stylesheet" href="/css/index.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
-<body>
+<body class="bg-gradient">
 
 <div class="bg-circle-container is-three-fifths">
-    <div class="bg-circle"></div>
+    <div class="bg-circle bg-gradient"></div>
 </div>
 <section class="section h100">
     <div class="columns is-desktop h100 is-vcentered">
@@ -49,15 +53,15 @@
                 </a>
                 <a class="button is-rounded is-outlined is-large is-inverted is-black" target="_blank" href="">
                     <span class="icon">
-                      <i class="fas fa-file"></i>
+                        <i class="fa fa-file-alt" aria-hidden="true"></i>
                     </span>
                     <span>Resume</span>
                 </a>
                 <a class="button is-rounded is-outlined is-large is-inverted is-white" target="_blank" href="https://venmo.com/dannyhy" id='venmo-btn'>
                     <span class="icon is-medium">
                         <?xml version="1.0" encoding="utf-8"?>
-                        <svg fill='black' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                            viewBox="0 0 162 162" style="enable-background:new 0 0 162 162;" xml:space="preserve">
+                        <svg fill='black' version="1.1" id="venmo-svg" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" preserveAspectRatio="none meet" x="0px" y="0px"
+                             viewBox="0 0 162 162" style="enable-background:new 0 0 162 162;" xml:space="preserve">
                             <path class="st0" d="M136.8,14.9c4.8,8,7,16.2,7,26.6c0,33.2-28.3,76.2-51.3,106.5H40L19,22.1l46-4.4l11.1,89.6
                                 c10.4-16.9,23.2-43.6,23.2-61.7c0-9.9-1.7-16.7-4.4-22.3L136.8,14.9z"/>
                         </svg>
@@ -82,20 +86,6 @@
         </div>
     </div>
 </section>
-<script>
-    Array.prototype.forEach.call(document.getElementsByClassName('bg-circle'), function(e) {
-        let css = 'linear-gradient(45deg, ' + getColor() + ', ' + getColor() + ')'
-        console.log(css);
-        e.style.backgroundImage = css;
-        e.style.backgroundColor = 'red';
-        console.log(e.style);
-    });
-
-    function getColor(){
-        return "hsl(" + 360 * Math.random() + ',' +
-            (25 + 70 * Math.random()) + '%,' +
-            (60 + 10 * Math.random()) + '%)'
-    }
-</script>
+<script src="/js/index.js"></script>
 </body>
 </html>
