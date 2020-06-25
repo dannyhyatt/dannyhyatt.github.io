@@ -3,6 +3,10 @@
     src: url('../asset/font/Dusha.ttf');
 }
 
+.title, .subtitle {
+    color: black;
+}
+
 .dusha {
     font-family: 'Dusha', Arial, sans-serif;
 }
@@ -85,8 +89,9 @@ html, body {
 
 .language-icon {
     display: inline;
-    filter: grayscale(25%);
+    filter: grayscale(33%);
     height: 2.5em;
+    margin-right: 8px;
 }
 
 .language-icon:hover {
@@ -99,4 +104,16 @@ html, body {
 
 .subtle-link:hover, .subtle-link:active, .subtle-link:focus {
     text-decoration: underline;
+}
+
+.project-thumbnail {
+    //
+}
+
+.is-parent,  .is-child {
+    height: 100%;
+}
+
+.tile-footer {
+    margin-top: auto;
 }
