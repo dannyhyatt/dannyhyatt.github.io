@@ -44,6 +44,12 @@ html, body {
     html, body {
         height: unset;
     }
+    .button {
+        width: 45%;
+    }
+    .button * {
+        width: 80%;
+    }
 }
 .min-h-100 {
     min-height: 100%;
