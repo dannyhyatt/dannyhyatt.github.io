@@ -40,7 +40,6 @@ html, body {
     .is-large {
         font-size: 1.25rem !important;
     }
-
     html, body {
         height: unset;
     }
@@ -122,4 +121,51 @@ html, body {
 
 .tile-footer {
     margin-top: auto;
+}
+.prograss-bar {
+    transition: width 0.5s ease;
+    display: inline-block;
+    height: 18px;
+    margin-top: 3px;
+    margin-left: 4px;
+    border-radius: 14px;
+    animation: makeProgress 1.5s ease-in-out;
+}
+
+.meter {
+    background-color: #fff;
+    width: 80%;
+    height: 24px;
+    max-width: 600px;
+    border-radius: 16px;
+}
+
+
+.language-progress-icon {
+    animation: makeProgressIcon 1.5s ease-in-out;
+    height: 48px;
+    width: 48px;
+    background-color: white;
+    border-radius: 24px;
+    margin-top: -200%;
+    border: 1px solid black;
+}
+
+
+@keyframes makeProgress {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: inherit;
+    }
+}
+
+@keyframes makeProgressIcon {
+    0% {
+        margin-left: 0;
+    }
+    100% {
+        margin-left: inherit;
+    }
 }

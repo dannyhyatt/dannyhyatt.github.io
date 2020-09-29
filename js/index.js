@@ -12,6 +12,6 @@ Array.prototype.forEach.call(document.getElementsByClassName('bg-gradient'), fun
 
 function getColor(){
     return "hsl(" + 360 * Math.random() + ',' +
-        (25 + 70 * Math.random()) + '%,' +
-        (50 + 10 * Math.random()) + '%)'
+        (60 + 15 * Math.random()) + '%,' +
+        (65 + 20 * Math.random()) + '%)'
 }
