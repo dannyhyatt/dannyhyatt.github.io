@@ -119,9 +119,19 @@ html, body {
     height: 100%;
 }
 
-.tile-footer {
-    margin-top: auto;
+.tile {
+    position: relative;
+    padding-bottom: 4rem;
 }
+
+.tile-footer {
+    position: absolute;
+    bottom: 0;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 10px;
+}
+
 .prograss-bar {
     transition: width 0.5s ease;
     display: inline-block;
