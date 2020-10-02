@@ -12,7 +12,8 @@
 }
 
 html, body {
-    height: 100%;
+    min-height: 100vh;
+    width: 100%;
 }
 body {
     display: inline-table;
@@ -135,6 +136,8 @@ body {
     margin-top: 2rem;
     padding-top: 2rem;
     padding-bottom: 10px;
+    display: flex;
+    margin-bottom: 0.5rem;
 }
 
 .prograss-bar {
@@ -182,5 +185,23 @@ body {
     }
     100% {
         margin-left: inherit;
+    }
+}
+
+#portfolio-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.is-parent {
+    display: flex;
+    flex-basis: 100%;
+    flex: 1 0 290px;
+    max-width: 330px;
+}
+
+@media only screen and (max-width: 630px) {
+    .is-parent {
+        margin: 2px auto;
     }
 }
