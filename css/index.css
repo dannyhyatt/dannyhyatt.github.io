@@ -191,13 +191,15 @@ body {
 #portfolio-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .is-parent {
     display: flex;
     flex-basis: 100%;
-    flex: 1 0 290px;
+    flex: 1 0 330px;
     max-width: 330px;
+    height: unset   ;
 }
 
 @media only screen and (max-width: 630px) {
