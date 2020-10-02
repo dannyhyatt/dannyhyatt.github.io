@@ -14,8 +14,13 @@
 html, body {
     height: 100%;
 }
+body {
+    display: inline-table;
+}
+
 .courier {
     font-family: "Courier 10 Pitch", monospace;
+    font-size: 1.25rem;
 }
 
 .bg-circle {
