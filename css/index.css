@@ -16,7 +16,7 @@ html, body {
     width: 100%;
 }
 body {
-    display: inline-table;
+    display: grid;
 }
 
 .courier {
@@ -191,7 +191,7 @@ body {
 #portfolio-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .is-parent {
