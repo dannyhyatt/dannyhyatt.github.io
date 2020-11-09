@@ -78,6 +78,16 @@ body {
     color: white;
 }
 
+#pics-btn:hover {
+    background-image: url("/asset/img/stars.png");
+    border: 0;
+    margin-right: 6px;
+}
+
+#fun-btn:hover {
+    animation: 2s shake;
+}
+
 .button {
     margin-right: 4px;
     margin-top: 8px;
@@ -206,4 +216,31 @@ body {
     .is-parent {
         margin: 2px auto;
     }
+}
+
+/* cool transparency?? */
+.tile.is-child {
+    mix-blend-mode: multiply;
+    background-color: transparent;
+}
+.tile {
+    background-color: transparent!important;
+}
+
+.tile.is-parent {
+    box-shadow: 0px 0px 20px 7px rgba(0,0,0,0.24);
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
