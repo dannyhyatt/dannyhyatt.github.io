@@ -216,6 +216,9 @@ body {
     .is-parent {
         margin: 2px auto;
     }
+    #buttons {
+        text-align: center;
+    }
 }
 
 /* cool transparency?? */
