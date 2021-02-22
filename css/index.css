@@ -1,10 +1,26 @@
 @font-face {
     font-family: 'Dusha';
-    src: url('../asset/font/Dusha.ttf');
+    src: url('/asset/font/Dusha.ttf');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/asset/font/Ubuntu-Regular.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/asset/font/Ubuntu-Bold.ttf');
+  font-weight: 600;
 }
 
 .title, .subtitle {
     color: black;
+}
+
+h1, h2 {
+  margin-left: 12px;
 }
 
 .dusha {
@@ -17,6 +33,7 @@ html, body {
 }
 body {
     display: grid;
+    font-family: 'Ubuntu', 'Times New Roman';
 }
 
 .courier {
@@ -37,6 +54,7 @@ body {
     position: absolute;
     z-index: -1;
     min-width: 630px;
+    animation: gradient-spin 10s linear infinite;
 }
 
 @media only screen and (max-width: 630px) {
@@ -219,6 +237,14 @@ body {
     #buttons {
         text-align: center;
     }
+
+    h1, h2 {
+      margin-left: 16px;
+    }
+
+    img {
+      transform: scale(0.9);
+    }
 }
 
 /* cool transparency?? */
@@ -246,4 +272,47 @@ body {
     80% { transform: translate(-1px, -1px) rotate(1deg); }
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gradient-spin {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: #000000ff;
+  }
+  .button.is-white.is-inverted.is-outlined, h1, h2 {
+    color: white!important;
+    border-color: white;
+  }
+  .button.is-white.is-inverted.is-outlined:hover {
+    border-color: black;
+  }
+  #venmo-svg {
+    fill: white;
+  }
+  .bg-circle-container {
+    filter: brightness(0.6) saturate(1.5);
+  }
 }
