@@ -11,87 +11,131 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <script defer src="https://use.fontawesome.com/releases/v5.6.1/js/all.js"></script>
-</head>
-<body class="bg-gradient" style="height: 100%">
+    <script src="https://cdn.jsdelivr.net/npm/walkway.js/src/walkway.min.js"></script>
+    <style>
+      html {
+        background-color: #d9d9d9;
+      }
+      .profile-img {
+        max-width: 512px; height: auto; margin: auto;width:100%;border-radius: 50%;
+      }
+      .profile-img, .profile-img path, .profile-img polyline {
+        stroke:#000;
+        stroke-width:2pt;
+      }
+      svg path{
+        fill: #00000000;
+      }
+      svg {
+        position: absolute;left: 0; top: 0;
+      }
+      #profile-img-svg {
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        border: 1px solid black;
+        animation: fadeIn 1s ease-in 2s reverse;
+        animation-fill-mode: forwards;
+      }
 
-<div class="bg-circle-container is-three-fifths">
-    <div class="bg-circle bg-gradient"></div>
-</div>
-<section class="section h100">
-    <div class="columns is-desktop h100 is-vcentered">
-        <div class="column is-three-fifths">
-            <h1 class="title is-3">
-                Hi, I'm Danny Hyatt
-            </h1>
-            <h1 class="subtitle is-4">
-                <span class="dusha">soccer player</span> & <span class="courier">programmer</span>
-            </h1>
-            <div id="buttons">
-                <a class="button is-rounded is-outlined is-large is-inverted is-white" target="_blank" href="https://github.com/dannyhyatt">
-                    <span class="icon">
-                      <i class="fab fa-github "></i>
-                    </span>
-                    <span>GitHub</span>
-                </a>
-                <a class="button is-rounded is-outlined is-large is-inverted is-white" target="_blank" href="https://instagram.com/dannyhyatt_" id="insta-btn">
-                    <span class="icon">
-                      <i class="fab fa-instagram "></i>
-                    </span>
-                    <span>Instagram</span>
-                </a>
-                <a class="button is-rounded is-outlined is-large is-inverted is-white" target="_blank" href="mailto:hey@dannyhyatt.com">
-                    <span class="icon">
-                      <i class="fas fa-envelope"></i>
-                    </span>
-                    <span>Email</span>
-                </a>
-                <a class="button is-rounded is-outlined is-large is-inverted is-white" target="_blank" href="https://blog.dannyhyatt.com/">
-                    <span class="icon is-medium">
-                      <i class="fas fa-blog"></i>
-                    </span>
-                    <span>Blog</span>
-                </a>
-                <a class="button is-rounded is-outlined is-large is-inverted is-white" href="/portfolio">
-                    <span class="icon">
-                      <i class="fas fa-code"></i>
-                    </span>
-                    <span>Portfolio</span>
-                </a>
-                <a class="button is-rounded is-outlined is-large is-inverted is-white" target="_blank" href="https://venmo.com/dannyhy" id='venmo-btn'>
-                    <span class="icon is-medium">
-                        <?xml version="1.0" encoding="utf-8"?>
-                        <svg fill='black' version="1.1" id="venmo-svg" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" preserveAspectRatio="none meet" x="0px" y="0px"
-                             viewBox="0 0 162 162" style="enable-background:new 0 0 162 162;" xml:space="preserve">
-                            <path class="st0" d="M136.8,14.9c4.8,8,7,16.2,7,26.6c0,33.2-28.3,76.2-51.3,106.5H40L19,22.1l46-4.4l11.1,89.6
-                                c10.4-16.9,23.2-43.6,23.2-61.7c0-9.9-1.7-16.7-4.4-22.3L136.8,14.9z"/>
-                        </svg>
-                    </span>
-                    <span>Venmo</span>
-                </a>
-                <a class="button is-rounded is-outlined is-large is-inverted is-white" target="_blank" href="https://danny.fun" id="fun-btn">
-                    <span class="icon is-medium">
-                        <i class="fas fa-laugh-beam"></i>
-                    </span>
-                    <span>Fun</span>
-                </a>
-                <a class="button is-rounded is-outlined is-large is-inverted is-white" target="_blank" href="https://danny.pics" id="pics-btn">
-                    <span class="icon is-medium">
-                        <i class="fas fa-camera"></i>
-                    </span>
-                    <span>Pics</span>
-                </a>
-            </div>
-        </div>
-        <div class="column is-two-fifths columns">
-            <div class="column is-one-fifth is-hidden-touch"></div>
-            <div class="column is-four-fifths">
-                <figure class="image">
-                    <img src="asset/img/profile.jpg" class="is-rounded">
-                </figure>
-            </div>
-        </div>
+      #profile-img-jpg {
+        opacity: 0;
+        animation: fadeIn 1s linear 2s;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0%; }
+        to { opacity: 100% }
+      }
+
+      .m-10 {
+        margin-bottom: 3rem;
+      }
+
+      .bg-gradient {
+          background: linear-gradient(13deg, #2fc879, #335d47, #ca7819);
+          background-size: 600% 600%;
+
+          -webkit-animation: bg-gradient-animation 53s ease infinite;
+          -moz-animation: bg-gradient-animation 53s ease infinite;
+          -o-animation: bg-gradient-animation 53s ease infinite;
+          animation: bg-gradient-animation 53s ease infinite;
+      }
+
+      @-webkit-keyframes bg-gradient-animation {
+          0%{background-position:86% 0%}
+          50%{background-position:15% 100%}
+          100%{background-position:86% 0%}
+      }
+      @-moz-keyframes bg-gradient-animation {
+          0%{background-position:86% 0%}
+          50%{background-position:15% 100%}
+          100%{background-position:86% 0%}
+      }
+      @-o-keyframes bg-gradient-animation {
+          0%{background-position:86% 0%}
+          50%{background-position:15% 100%}
+          100%{background-position:86% 0%}
+      }
+      @keyframes bg-gradient-animation {
+          0%{background-position:86% 0%}
+          50%{background-position:15% 100%}
+          100%{background-position:86% 0%}
+      }
+
+      #gradient-border {
+        height: 100%;
+        width: 100%;
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+      }
+    </style>
+</head>
+<body>
+  <section class="section">
+    <div class="columns">
+      <div class="column is-offset-4 is-4">
+        <figure class="image is-centered m-10 is-relative" id="profile-img-wrapper">
+          <!-- <div id="gradient-border" class="bg-gradient"> -->
+            <img class="profile-img" src="/asset/img/me_pixels.jpg" id="profile-img-jpg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1194 1194" width="1194" height="1194" class="profile-img" id="profile-img-svg">
+            	<path id="Shape 1" class="shp0" d="M0 1041L303 902L390 806L377 728L342 639L341 549L353 354L395 288L461 231L471 225L720 206L773 239L882 330L899 380L917 474L876 497L860 555L816 626L812 707L762 827L726 864L725 905L752 935L1056 1095L1083 1145L1088 1206L-7 1209L0 1041Z" />
+            	<path id="Shape 12" class="shp0" d="M413 723L419 786L485 869L551 914L635 921L710 881L765 828L788 746L803 669L813 513L785 461L746 434L695 441L665 437L560 455L534 447L510 483L456 461L443 545L423 560L420 620L411 629L413 723Z" />
+            	<path id="Shape 12" class="shp0" d="M297 905L233 1176L264 1194L444 1194L378 881L378 849L392 819L399 872L422 915L479 974L561 1052L606 1034L644 1007L704 948L711 905L756 939L882 1148L866 1194L707 1194L710 1014L641 1083L627 1079L581 1155L597 1194L504 1194L528 1149L510 1110L516 1103L419 1031" />
+            	<!-- <path id="Shape 2" class="shp0" d="M467 554L489 544L511 544L549 552L576 558L586 571L579 575L556 572L543 565L527 558L512 555L498 554L489 558L475 563L470 562L467 554Z" />
+            	<path id="Shape 3" class="shp0" d="M799 588L799 578L785 569L772 569L756 569L742 569L726 571L716 573L709 578L706 587L712 589L730 586L741 585L748 581L761 579L775 578L787 583L799 588Z" />
+            	<path id="Shape 5" class="shp0" d="M498 597L522 593L551 592L570 597L580 606L570 614L554 618L538 616L520 613L504 610L498 597Z" />
+            	<path id="Shape 6" class="shp0" d="M686 619L702 608L738 605L755 614L766 625L754 630L734 630L715 630L699 626L686 619Z" />
+            	<path id="Shape 7" class="shp0" d="M535 784L560 810L597 824L627 827L656 825L679 814L698 793L684 795L665 797L643 797L619 797L597 795L577 791L559 787L544 784L535 784Z" />
+            	<path id="Shape 8" class="shp0" d="M613 617L618 646L618 672L608 687L601 694L593 694L584 697L576 707L576 722L586 732L602 740L614 746L630 750L646 750L665 741L679 728L679 711L673 698L664 687L658 673L658 652L659 638L664 617L613" />
+            	<path id="Shape 11" class="shp0" d="M539 790L564 798L587 802L612 804L638 806L664 806L682 805L693 797" /> -->
+            </svg>
+          <!-- </div> -->
+        </figure>
+        <h1 class="title">
+          Hi, I'm Danny
+        </h1>
+        <p class="subtitle my-5">
+          I'm a <strong>high school student</strong> with a passion for <b>programming</b>, <b>soccer</b> and <b>biology</b>. If you'd like to learn more about me, you can check out my
+          <a href="/portfolio">portfolio</a>, my resume (<a href="/resume">webpage</a> or <a href="/dannyhyatt_resume.pdf">PDF</a>), and my
+          <a href="https://blog.dannyhyatt.com">blog</a>.
+        </p>
+      </div>
     </div>
-</section>
-<script src="/js/index.js"></script>
+  </section>
+  <script>
+  var svg = new Walkway({
+  selector: '#profile-img-svg',
+  duration: '2000',
+  // can pass in a function or a string like 'easeOutQuint'
+  easing: 'easeOutQuint'
+  });
+  svg.draw();
+  </script>
 </body>
 </html>

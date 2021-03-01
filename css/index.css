@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
     font-family: 'Dusha';
     src: url('/asset/font/Dusha.ttf');
 }
@@ -247,7 +247,7 @@ body {
     }
 }
 
-/* cool transparency?? */
+cool transparency??
 .tile.is-child {
     mix-blend-mode: multiply;
     background-color: transparent;
@@ -300,7 +300,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
   html {
-    background-color: #000000ff;
+    background-color: #444444ff;
   }
   .button.is-white.is-inverted.is-outlined, h1, h2 {
     color: white!important;
@@ -316,3 +316,46 @@ body {
     filter: brightness(0.6) saturate(1.5);
   }
 }
+
+@media (prefers-color-scheme: dark) and screen and (max-width: 630px) {
+  .bg-gradient {
+    filter: brightness(0.0) saturate(1.5);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+#profile-pic {
+  height: auto;
+  width: 100%;
+  border-radius: 50%;
+  border: 1px solid white;
+  position: absolute;
+}
+
+#bg-image {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid white;
+  animation: fadeOut 3s linear 2.1s;
+}
+
+.image svg, .image path, .image polyline {
+  stroke:#fff;
+  stroke-width:2px
+}
+.image svg path{
+  fill: #00000000;
+}
+
+svg {
+  height: auto;
+  width: auto;
+} */
