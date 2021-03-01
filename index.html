@@ -134,7 +134,10 @@
         color: #9a2970;
       }
       .social-link .social-svg:hover .social-group__inner-circle--instagram, .social-link .social-svg:active .social-group__inner-circle--instagram, .social-link .social-svg:focus .social-group__inner-circle--instagram {
-        fill: url(#goodInsta) !important;
+        fill: url(#simpleInsta) !important;
+      }
+      .social-link--instagram .social-svg:hover .social-group .social-group__outline, .social-link--instagram .social-svg:active .social-group .social-group__outline,.social-link--instagram .social-svg:focus .social-group .social-group__outline {
+        stroke: url(#simpleInsta) !important;
       }
     </style>
 </head>
@@ -195,12 +198,15 @@
             <svg class="social-svg" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
               <title>Instagram</title>
               <defs>
-                <linearGradient x1="0%" y1="100%" y2="0%" id="simpleInsta">
-                  <stop stop-color="#D72F3F" offset="0%" />
-                  <stop stop-color="#4221B9" offset="100%" />
-                </linearGradient>
+                <radialGradient r="150%" cx="30%" cy="107%" id="simpleInsta">
+                  <stop stop-color="#fdf497" offset="0%" />
+                  <stop stop-color="#fdf497" offset="5%" />
+                  <stop stop-color="#fd5949" offset="45%" />
+                  <stop stop-color="#d6249f" offset="60%" />
+                  <stop stop-color="#285AEB" offset="90%" />
+                </radialGradient>
 
-                <radialGradient r="150%" cx="30%" cy="107%" id="goodInsta">
+                <radialGradient r="150%" cx="30%" cy="107%" id="simpleInsta2">
                   <stop stop-color="#fdf497" offset="0%" />
                   <stop stop-color="#fdf497" offset="5%" />
                   <stop stop-color="#fd5949" offset="45%" />
