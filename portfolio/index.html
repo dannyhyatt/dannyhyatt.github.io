@@ -98,25 +98,28 @@
         font-weight: 200;
         color: #000;
         transition: all 0.5s;
-        animation: bolden 0.5s linear 0.1s forwards;
+        animation: bolden 0.5s linear 0 forwards;
       }
-      .animated-bold span:nth-child(2) {
-        animation: bolden 0.5s linear 0.2s forwards;
-      }
-      .animated-bold span:nth-child(3) {
+      .animated-bold span:nth-child(1) {
         animation: bolden 0.5s linear 0.3s forwards;
       }
-      .animated-bold span:nth-child(4) {
-        animation: bolden 0.5s linear 0.4s forwards;
-      }
-      .animated-bold span:nth-child(5) {
+      .animated-bold span:nth-child(2) {
         animation: bolden 0.5s linear 0.5s forwards;
       }
+      .animated-bold span:nth-child(3) {
+        animation: bolden 0.5s linear 0.7s forwards;
+      }
+      .animated-bold span:nth-child(4) {
+        animation: bolden 0.5s linear 0.9s forwards;
+      }
+      .animated-bold span:nth-child(5) {
+        animation: bolden 0.5s linear 1.1s forwards;
+      }
       .animated-bold span:nth-child(6) {
-        animation: bolden 0.5s linear 0.6s forwards;
+        animation: bolden 0.5s linear 1.30s forwards;
       }
       .animated-bold span:nth-child(7) {
-        animation: bolden 0.5s linear 0.7s forwards;
+        animation: bolden 0.5s linear 1.5s forwards;
       }
 
       @keyframes bolden {
@@ -145,7 +148,7 @@
         height: 0;
         border: 1px solid #4a4a4a;
         border-radius : 5px;
-        animation: underline-animation 2s ease-out;
+        animation: underline-animation 2s ease-in;
       }
 
       @keyframes underline-animation {
@@ -182,8 +185,8 @@
       }
       .skill-thumbnail img {
         display: inline;
-        height: 3.5rem;
-        width: 3.5rem;
+        height: 4rem;
+        width: 4rem;
         padding: 0.5rem;
         padding-right: calc(0.5rem + 2px);
         object-fit: contain;
@@ -194,6 +197,12 @@
       #skills {
         width: 100%;
         position: relative;
+      }
+      @media screen and (max-width: 748px) {
+        .skill-thumbnail img {
+          height: 3.5rem;
+          width: 3.5rem;
+        }
       }
     </style>
 </head>
@@ -223,18 +232,40 @@
         </p>
         <h3>Skills</h3>
         <div id="skills">
+          <div class="skill" id="html-skill">
+            <a href="#html-skill" class="skill-thumbnail" title="Flutter"><img src="/asset/img/html.svg"></a>
+            <div class="skill-explanation">
+              I'm fluent in HTML, CSS and JavaScript. I'm a fan of light webpages and using the least possible JavaScript,
+              so I avoid jQuery and most other frameworks at all costs. I'm also experienced with Bootstrap 3, Bootstrap 4 and Bulma, which I used to make this website.
+              I've got some experience with PHP too, but that's not really something to brag about.
+            </div>
+          </div>
+          <div class="skill" id="java-skill">
+            <a href="#java-skill" class="skill-thumbnail" title="Flutter"><img src="/asset/img/java.svg"></a>
+            <div class="skill-explanation">
+              Java was revolutionary when it came out. While there's a lot of better alternatives for most cases now, it was my first language I learned and I still like to use it.
+              My experience in Java comes from making Spring servers and Android apps.
+            </div>
+          </div>
+          <div class="skill" id="python-skill">
+            <a href="#python-skill" class="skill-thumbnail" title="Flutter"><img src="/asset/img/python.svg"></a>
+            <div class="skill-explanation">
+              I'll never agree with using Python in production because of its lack of static typing, but I could jump into any Flask or Django project with no difficulty.
+              I'm also exploring TensorFlow and artificial intelligence with Python, and passed the TensorFlow developer exam. The certificate is on my LinkedIn account.
+            </div>
+          </div>
           <div class="skill" id="flutter-skill">
             <a href="#flutter-skill" class="skill-thumbnail" title="Flutter"><img src="/asset/img/flutter.svg"></a>
             <div class="skill-explanation">
               Created by Google, Flutter is, framework for the Dart programming language, is my app development tool of choice. With it, I can build cross-platform mobile apps with 60 FPS animations.
             </div>
           </div>
-            <div class="skill" id="go-skill">
-              <a href="#go-skill" class="skill-thumbnail" title="Go"><img src="/asset/img/gopher.svg"></a>
-              <div class="skill-explanation">
-                Created by Google, Go is a functional, garbage-collected language typically used to write servers.
-              </div>
+          <div class="skill" id="go-skill">
+            <a href="#go-skill" class="skill-thumbnail" title="Go"><img src="/asset/img/gopher.svg"></a>
+            <div class="skill-explanation">
+              Created by Google, Go is a functional, garbage-collected language typically used to write servers.
             </div>
+          </div>
           <div class="skill" id="postgres-skill">
             <a href="#postgres-skill" class="skill-thumbnail" title="PostgreSQL"><img src="/asset/img/postgres.svg"></a>
             <div class="skill-explanation">
@@ -244,7 +275,7 @@
           </div>
         </div>
         <h3>Projects</h3>
-
+        <p>work in progress</p>
       </div>
     </div>
   </section>
