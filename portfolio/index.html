@@ -1,3 +1,7 @@
+<!--
+  hey !!
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +18,7 @@
     <style>
       html {
         background-color: #d9d9d9;
+        scroll-behavior: smooth;
       }
       .profile-img {
         max-width: 512px; height: auto; margin: auto;width:100%;border-radius: 50%;
@@ -166,6 +171,7 @@
         stroke-width: 10px;
         stroke: #4a4a4a;
       }
+
       .skill-explanation {
         display:none;
         position: absolute;
@@ -174,6 +180,8 @@
       }
       .skill:target .skill-explanation {
         display: inline !important;
+        padding-top: 2.6em;
+        margin-left: calc(4rem + 12px);
       }
       .skill:target .skill-thumbnail img {
         border-right: 2px solid #4a4a4a !important;
@@ -190,6 +198,7 @@
         padding: 0.5rem;
         padding-right: calc(0.5rem + 2px);
         object-fit: contain;
+        position: absolute;
       }
       .skill {
         display: block;
@@ -197,19 +206,57 @@
       #skills {
         width: 100%;
         position: relative;
+        height: 28rem;
       }
+
+      /* todo display html when no id is selected */
+      /* #html-skill:not(#html-skill:target) .skill-explanation {
+          display: inline !important;
+          padding-top: 2.6em;
+          margin-left: calc(4rem + 12px);
+      } */
+
+      #html-skill .skill-thumbnail img {
+        margin-top: 4rem;
+      }
+      #java-skill .skill-thumbnail img {
+        top: 4rem;
+        margin-top: 4rem;
+      }
+      #python-skill .skill-thumbnail img {
+        top: 8rem;
+        margin-top: 4rem;
+      }
+      #flutter-skill .skill-thumbnail img {
+        top: 12rem;
+        margin-top: 4rem;
+      }
+      #go-skill .skill-thumbnail img {
+        top: 16rem;
+        margin-top: 4rem;
+      }
+      #postgres-skill .skill-thumbnail img {
+        top: 20rem;
+        margin-top: 4rem;
+      }
+
       @media screen and (max-width: 748px) {
         .skill-thumbnail img {
           height: 3.5rem;
           width: 3.5rem;
         }
       }
+
+      .project-img {
+        width: 100%;
+        mix-blend-mode: multiply;
+      }
     </style>
 </head>
 <body>
   <section class="section">
     <div class="columns">
-      <div class="column is-offset-4 is-4 content is-size-5">
+      <div class="column is-offset-4-desktop is-4-desktop is-offset-2-tablet is-8-tablet is-size-5 content">
         <figure class="image">
           <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.0" id="fibinocci" viewBox="0 0 950 580">
             <path d="M 18.898132,563.14957 A 543.94263,543.75146 0 0 1 562.84077,19.398132" id="path1873" style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
@@ -230,8 +277,8 @@
           I like to <u class="animated-underline"><span></span>design</u> and <b class="animated-bold"><span>d</span><span>e</span><span>v</span><span>e</span><span>l</span><span>o</span><span>p</span></b> intuitive
           user interfaces and realiable, secure backends with low latency. Privacy and accessibility are my ethos when developing software.
         </p>
-        <h3>Skills</h3>
         <div id="skills">
+        <h3 style="position: absolute; margin-top: 0.5rem">Skills</h3>
           <div class="skill" id="html-skill">
             <a href="#html-skill" class="skill-thumbnail" title="Flutter"><img src="/asset/img/html.svg"></a>
             <div class="skill-explanation">
@@ -258,12 +305,14 @@
             <a href="#flutter-skill" class="skill-thumbnail" title="Flutter"><img src="/asset/img/flutter.svg"></a>
             <div class="skill-explanation">
               Created by Google, Flutter is, framework for the Dart programming language, is my app development tool of choice. With it, I can build cross-platform mobile apps with 60 FPS animations.
+              I've <a href="#mcps-sidekick">published one app</a> with it and built many more.
             </div>
           </div>
           <div class="skill" id="go-skill">
             <a href="#go-skill" class="skill-thumbnail" title="Go"><img src="/asset/img/gopher.svg"></a>
             <div class="skill-explanation">
               Created by Google, Go is a functional, garbage-collected language typically used to write servers.
+              I used it to make a <a href="#scriber">blogging website</a> as a learning project. I love Go's syntax and simplicity.
             </div>
           </div>
           <div class="skill" id="postgres-skill">
@@ -275,17 +324,58 @@
           </div>
         </div>
         <h3>Projects</h3>
-        <p>work in progress</p>
+        <div class="columns" id="kids-for-code">
+          <div class="column is-3 is-12-mobile">
+            <img class="project-img" src="http://kidsforcode.org/assets/img/logo.png">
+          </div>
+          <div class="column is-9 is-12-mobile">
+            <h3>Kids For Code</h3>
+            <p>
+              Kids For Code is an organization I volunteer at to teach HTML/CSS and Java to young kids.
+              I also maintain their website, <a href="https://kidsforcode.org/">kidsforcode.org</a>, which
+              I built with Bootstrap 4.
+            </p>
+          </div>
+        </div>
+        <div class="columns" id="scriber">
+          <div class="column is-3 is-12-mobile project-img">
+            <img class="project-img" src="https://scriber.cc/android-icon-192x192.png">
+          </div>
+          <div class="column is-9 is-12-mobile">
+            <h3>Scriber</h3>
+            <p>
+              I started Scriber because I liked Medium, but didn't like how they aren't respecting of privacy,
+              have slow webpages, and require a subscription to read more than three articles per month.
+              Scriber is a free blogging platform with aspects of social media incorporated, like post likes,
+              comments, bookmarks and trending posts. Although it was just a learning project, I'm satisfied with
+              how it turned out. Check out a demo <a href="https://scriber.cc">here</a>.
+            </p>
+          </div>
+        </div>
+        <div class="columns" id="mcps-sidekick">
+          <div class="column is-3 is-12-mobile project-img">
+            <img class="project-img" src="https://mcps.app/logo.png">
+          </div>
+          <div class="column is-9 is-12-mobile">
+            <h3>MCPS Sidekick</h3>
+            <p>
+              My school district, MCPS, provides a grade viewer app that doesn't look very appealing.
+              I created an alternative that is not only more visually appealing, but adds a key feature - a grade calculator.
+              Students can add an assignment - for example a test - and calculate the score they need to improve or maintain
+              their letter grade. It is available <a href="https://mcps.app">here</a>.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
   <script>
-  var svg = new Walkway({
-    selector: '#fibinocci',
-    duration: '2000',
-    // can pass in a function or a string like 'easeOutQuint'
-    easing: 'easeInCubic'
-  });
+    var svg = new Walkway({
+      selector: '#fibinocci',
+      duration: '2000',
+      // can pass in a function or a string like 'easeOutQuint'
+      easing: 'easeInCubic'
+    });
   svg.draw();
   </script>
 </body>
