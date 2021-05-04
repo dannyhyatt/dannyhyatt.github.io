@@ -180,7 +180,7 @@
       }
       .skill:target .skill-explanation {
         display: inline !important;
-        padding-top: 2.6em;
+        padding-top: 3em;
         margin-left: calc(4rem + 12px);
       }
       .skill:target .skill-thumbnail img {
@@ -251,6 +251,63 @@
         width: 100%;
         mix-blend-mode: multiply;
       }
+
+      :target div h3:before {
+        content: '> ';
+      }
+      @media (prefers-color-scheme: dark) {
+        html {
+          color: white;
+          background-color: #111;
+        }
+        #profile-img-svg {
+          fill: white;
+          border: 1px solid white;
+        }
+        .title, h1, .content h1, .content h3 {
+          color: #efefef;
+        }
+        .subtitle, .subtitle strong, p {
+          color: #fff;
+        }
+        .animated-underline::before {
+          border: 1px solid #ddd;
+        }
+        .animated-underline {
+          color: #eee;
+        }
+        .animated-bold span {
+          color: #eee;
+        }
+        #fibinocci {
+          stroke: #ccc;
+        }
+        #html-skill a img {
+          filter: brightness(0%) invert();
+        }
+        .skill:target .skill-thumbnail img {
+          border-right: 2px solid #eee !important;
+        }
+        .skill:hover .skill-thumbnail img {
+          border-right: 2px solid #eee;
+        }
+        .skill-explanation {
+          color: #efefef;
+        }
+        .project-img {
+          mix-blend-mode: unset;
+        }
+        #scriber div {
+          mix-blend-mode: difference;
+          filter: brightness(150%);
+        }
+        #scriber div img {
+          filter: invert();
+        }
+        #kids-for-code div img {
+          filter: brightness(100);
+        }
+      }
     </style>
 </head>
 <body>
@@ -290,7 +347,7 @@
           <div class="skill" id="java-skill">
             <a href="#java-skill" class="skill-thumbnail" title="Flutter"><img src="/asset/img/java.svg"></a>
             <div class="skill-explanation">
-              Java was revolutionary when it came out. While there's a lot of better alternatives for most cases now, it was my first language I learned and I still like to use it.
+              Java was revolutionary when it came out. While there's a lot of better alternatives for most cases now, it was my first language and I still like to use it.
               My experience in Java comes from making Spring servers and Android apps.
             </div>
           </div>
@@ -326,7 +383,7 @@
         <h3>Projects</h3>
         <div class="columns" id="kids-for-code">
           <div class="column is-3 is-12-mobile">
-            <img class="project-img" src="http://kidsforcode.org/assets/img/logo.png">
+            <img class="project-img" src="/asset/img/kfc-logo.png">
           </div>
           <div class="column is-9 is-12-mobile">
             <h3>Kids For Code</h3>
@@ -339,7 +396,7 @@
         </div>
         <div class="columns" id="scriber">
           <div class="column is-3 is-12-mobile project-img">
-            <img class="project-img" src="https://scriber.cc/android-icon-192x192.png">
+            <img class="project-img" src="/asset/img/scriber-192x192.png">
           </div>
           <div class="column is-9 is-12-mobile">
             <h3>Scriber</h3>
@@ -354,7 +411,7 @@
         </div>
         <div class="columns" id="mcps-sidekick">
           <div class="column is-3 is-12-mobile project-img">
-            <img class="project-img" src="https://mcps.app/logo.png">
+            <img class="project-img" src="/asset/img/mcps-sidekick-logo.png">
           </div>
           <div class="column is-9 is-12-mobile">
             <h3>MCPS Sidekick</h3>

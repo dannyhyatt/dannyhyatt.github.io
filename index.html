@@ -19,9 +19,6 @@ If you're considering hiring me, please do so.
     <script defer src="https://use.fontawesome.com/releases/v5.6.1/js/all.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/walkway.js/src/walkway.min.js"></script>
     <style>
-      html {
-        background-color: #d9d9d9;
-      }
       .profile-img {
         max-width: 512px; height: auto; margin: auto;width:100%;border-radius: 50%;
       }
@@ -156,6 +153,36 @@ If you're considering hiring me, please do so.
           margin-bottom: 3rem;
         }
       }
+
+      @media (prefers-color-scheme: dark) {
+        html {
+          color: white;
+          background-color: #111;
+        }
+        #profile-img-svg {
+          fill: white;
+          border: 1px solid white;
+        }
+        .title {
+          color: #efefef;
+        }
+        .subtitle, .subtitle strong {
+          color: #fff;
+        }
+        a:hover {
+          color: #efefef;
+        }
+        .profile-img, .profile-img path, .profile-img polyline {
+          stroke:#fff;
+          stroke-width:2pt;
+        }
+        .social-link {
+          filter: invert(100%);
+        }
+        .social-link--linkedin:hover, .social-link--instagram:hover {
+          filter: none;
+        }
+      }
     </style>
 </head>
 <body>
@@ -185,7 +212,7 @@ If you're considering hiring me, please do so.
         <p class="subtitle my-5">
           I'm a <strong>high school student</strong> with a passion for <b>programming</b>, <b>soccer</b> and <b>biology</b>. If you'd like to learn more about me, you can check out my
           <a href="/portfolio">portfolio</a>, my resume (<a href="/resume">webpage</a> or <a href="/dannyhyatt_resume.pdf">PDF</a>), and my
-          <a href="https://blog.dannyhyatt.com">blog</a>.
+          <a href="https://blog.dannyhyatt.com">blog</a>. If you'd like to get in touch, contact me by going to my social media accounts on the buttons below or <a href="mailto:hi@dannyhyatt.com">email me</a>.
         </p>
 
         <div class='has-text-centered'>
@@ -245,13 +272,16 @@ If you're considering hiring me, please do so.
     </div>
   </section>
   <script>
-  var svg = new Walkway({
-  selector: '#profile-img-svg',
-  duration: '2000',
-  // can pass in a function or a string like 'easeOutQuint'
-  easing: 'easeOutQuint'
-  });
-  svg.draw();
+    window.onload = function() {
+      var svg = new Walkway({
+      selector: '#profile-img-svg',
+      duration: '2000',
+      // can pass in a function or a string like 'easeOutQuint'
+      easing: 'easeOutQuint'
+      });
+      svg.draw();
+    }
+
   </script>
 </body>
 </html>

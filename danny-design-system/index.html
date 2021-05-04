@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  html, body {
+    height: 100vh;
+  }
+  body {
+    font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+  }
+  :root {
+    /* some light color shades */
+
+    --blue-shade: #7EE8FA;
+    --red-shade: #E58C8A;
+    --green-shade: #80FF72;
+    --pink-shade: #EEC0C6;
+    --yellow-shade: #FFF07C;
+
+
+    /* --yellow-shade: #FFBE0B;
+    --orange-shade: #FB5607;
+    --pink-shade: #FF006E;
+    --violet-shade: #8338EC;
+    --blue-shade: #3A86FF;
+    --pink-shade: #FF3374;
+    --aqua-shade: #028090;
+    --green-shade: #008F00;
+    --red-shade: #DE3C4B; */
+
+    /* spacing */
+    --btn-padding: 6px;
+
+    --border-width: 4px;
+    --border-radius: 8px;
+
+
+    --horizontal-text-padding: 1.5rem;
+    --vertical-text-padding: 1.5rem;
+
+    --spacer-height: 1.5rem;
+  }
+  @font-face {
+  font-family: 'Segoe UI';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Segoe UI Regular'), url('Segoe UI.woff') format('woff');
+  }
+
+
+  @font-face {
+  font-family: 'Segoe UI Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Segoe UI Italic'), url('Segoe UI Italic.woff') format('woff');
+  }
+
+
+  @font-face {
+  font-family: 'Segoe UI Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Segoe UI Bold'), url('Segoe UI Bold.woff') format('woff');
+  }
+
+
+  @font-face {
+  font-family: 'Segoe UI Bold Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Segoe UI Bold Italic'), url('Segoe UI Bold Italic.woff') format('woff');
+  }
+  .btn {
+    position: relative;
+    display: inline-block;
+    padding: 30px 45px;
+    cursor: pointer;
+  }
+  .btn .rect {
+    transition: all 0.2s ease-out;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    mix-blend-mode: luminosity;
+  }
+  .borders-rounded .rect {
+    height: calc(100% - var(--border-width) * 2) !important;
+    width: calc(100% - var(--border-width) * 2) !important;
+  }
+  .btn .top-left {
+    top: calc(var(--btn-padding) * -1);
+    left: calc(var(--btn-padding) * -1);
+  }
+  .btn .bottom-right {
+    top: var(--btn-padding);
+    left: var(--btn-padding);
+  }
+  /* define background color and border color classes */
+  .red {
+    background-color: var(--red-shade);
+  }
+  .blue {
+    background-color: var(--blue-shade);
+  }
+  .green {
+    background-color: var(--green-shade);
+  }
+  .pink {
+    background-color: var(--pink-shade);
+  }
+  .yellow {
+    background-color: var(--yellow-shade);
+  }
+  .red-border {
+    border: var(--border-width) solid var(--red-shade);
+  }
+  .blue-border {
+    border: var(--border-width) solid var(--blue-shade);
+  }
+  .green-border {
+    border: var(--border-width) solid var(--green-shade);
+  }
+  .pink-border {
+    border: var(--border-width) solid var(--pink-shade);
+  }
+  .yellow-border {
+    border: var(--border-width) solid var(--yellow-shade);
+  }
+  .borders-rounded div {
+    border-radius: var(--border-radius);
+  }
+  .btn-text {
+    z-index: 99999;
+    position: relative;
+  }
+  .btn:hover .rect {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .opacity-light {
+    opacity: 0.25;
+  }
+  .opacity-light > * {
+    opacity: initial;
+  }
+  .opacity-light-medium {
+    opacity: 0.32;
+  }
+  .opacity-medium {
+    opacity: 0.5;
+  }
+  .opacity-medium-heavy {
+    opacity: 0.62;
+  }
+  .opacity-heavy {
+    opacity: 0.8;
+  }
+
+  .section {
+    margin: 4rem 0;
+  }
+
+  .section > .half, .section > .third {
+    position: relative;
+    display: flex;
+  }
+
+  .section > .half > *, .section > .third > * {
+    position: absolute;
+  }
+
+  .bg-color {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .half {
+    width: 50%;
+    height: 100%;
+  }
+
+  .headline {
+    display: flex;
+    align-self: center;
+  }
+
+  .align-right {
+    text-align: right;
+    right: var(--horizontal-text-padding);
+  }
+
+  .spacer {
+    width: 100%;
+    height: var(--spacer-height);
+  }
+
+  .jumbo-title {
+    font-size: 96px;
+  }
+  .thin-text {
+    font-weight: 100;
+  }
+  </style>
+</head>
+<body>
+  <div class="spacer"></div>
+  <div class="row section">
+    <div class="half">
+      <div class="blue opacity-light bg-color"></div>
+      <span class="fr-2 headline align-right jumbo-title thin-text">Danny's Design System</span>
+    </div>
+  </div>
+  <!-- <div class='btn'>
+    <span class='btn-text'>yep</span>
+    <div class='rect top-left green opacity-medium-heavy'></div>
+    <div class='rect bottom-right pink opacity-medium-heavy'></div>
+  </div> -->
+</body>
+</html>
