@@ -15,38 +15,11 @@
     <link rel="manifest" href="/site.webmanifest">
     <style>
       html {
-        background-color: #d9d9d9;
+        /* saving this here because i like this color */
+        /* background-color: #f9d9d9; */
+        background-color: #f9f9f9;
         scroll-behavior: smooth;
       }
-      .profile-img {
-        max-width: 512px; height: auto; margin: auto;width:100%;border-radius: 50%;
-      }
-      .profile-img, .profile-img path, .profile-img polyline {
-        stroke:#000;
-        stroke-width:2pt;
-      }
-      #profile-img-svg path{
-        fill: #00000000;
-      }
-      #profile-img-svg {
-        position: absolute;left: 0; top: 0;
-      }
-      #profile-img-svg {
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        transform: translateX(-50%);
-        border: 1px solid black;
-        animation: fadeIn 1s ease-in 2s reverse;
-        animation-fill-mode: forwards;
-      }
-
-      #profile-img-jpg {
-        opacity: 0;
-        animation: fadeIn 1s linear 2s;
-        animation-fill-mode: forwards;
-      }
-
       @keyframes fadeIn {
         from { opacity: 0%; }
         to { opacity: 100% }
@@ -163,13 +136,6 @@
         }
       }
 
-      #fibinocci {
-        height: 100%;
-        width: 100%;
-        stroke-width: 10px;
-        stroke: #4a4a4a;
-      }
-
       .skill-explanation {
         display:none;
         position: absolute;
@@ -245,6 +211,15 @@
         }
       }
 
+
+      #fibonacci-path {
+        stroke: #363636;
+        stroke-dasharray: 500;
+        stroke-dashoffset: 500;
+        animation: elongate-path 5s linear forwards;
+        transform: translate(24px, 20px) scale(0.5) rotate(270deg);
+      }
+
       .project-img {
         width: 100%;
         mix-blend-mode: multiply;
@@ -258,12 +233,11 @@
           color: white;
           background-color: #111;
         }
+        a {
+          color: #aaccff;
+        }
         a:hover {
           color: white;
-        }
-        #profile-img-svg {
-          fill: white;
-          border: 1px solid white;
         }
         .title, h1, .content h1, .content h3 {
           color: #efefef;
@@ -279,9 +253,6 @@
         }
         .animated-bold span {
           color: #eee;
-        }
-        #fibinocci {
-          stroke: #ccc;
         }
         #html-skill a img {
           filter: brightness(0%) invert();
@@ -308,19 +279,15 @@
         #kids-for-code div img {
           filter: contrast(0) brightness(100);
         }
+        #fibonacci-path {
+          stroke: #fff;
+        }
       }
 
       @keyframes elongate-path {
         to {
           stroke-dashoffset: 0;
         }
-      }
-
-      #fibonacci-path {
-        stroke-dasharray: 500;
-        stroke-dashoffset: 500;
-        animation: elongate-path 5s linear forwards;
-        transform: translate(24px, 20px) scale(0.5) rotate(270deg);
       }
     </style>
 </head> 
@@ -347,8 +314,7 @@
           Portfolio
         </h1>
         <p class="subtitle my-5">
-          I like to <u class="animated-underline"><span></span>design</u> and <b class="animated-bold"><span>d</span><span>e</span><span>v</span><span>e</span><span>l</span><span>o</span><span>p</span></b> intuitive
-          user interfaces and realiable, secure backends with low latency. Privacy and accessibility are my ethos when developing software.
+          I <u class="animated-underline"><span></span>design</u> and <b class="animated-bold"><span>d</span><span>e</span><span>v</span><span>e</span><span>l</span><span>o</span><span>p</span></b> simple UIs,. Privacy and accessibility are my ethos when developing software.
         </p>
         <div id="skills">
         <h3 style="position: absolute; margin-top: 0.5rem">Skills</h3>
@@ -397,7 +363,7 @@
           <div class="column is-9 is-12-mobile">
             <h3>Kids For Code</h3>
             <p>
-              Kids For Code is an organization I volunteer at to teach HTML/CSS and Java to young kids.
+              Kids For Code is an organization I volunteered at to teach HTML/CSS and Java to young kids.
               I also maintain their website, <a href="https://kidsforcode.org/">kidsforcode.org</a>, which
               I built with Bootstrap 4.
             </p>
