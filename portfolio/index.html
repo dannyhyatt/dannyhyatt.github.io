@@ -13,8 +13,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <script defer src="https://use.fontawesome.com/releases/v5.6.1/js/all.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/walkway.js/src/walkway.min.js"></script>
     <style>
       html {
         background-color: #d9d9d9;
@@ -260,6 +258,9 @@
           color: white;
           background-color: #111;
         }
+        a:hover {
+          color: white;
+        }
         #profile-img-svg {
           fill: white;
           border: 1px solid white;
@@ -308,24 +309,39 @@
           filter: contrast(0) brightness(100);
         }
       }
+
+      @keyframes elongate-path {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      #fibonacci-path {
+        stroke-dasharray: 500;
+        stroke-dashoffset: 500;
+        animation: elongate-path 5s linear forwards;
+        transform: translate(24px, 20px) scale(0.5) rotate(270deg);
+      }
     </style>
-</head>
+</head> 
 <body>
   <section class="section">
     <div class="columns">
       <div class="column is-offset-4-desktop is-4-desktop is-offset-2-tablet is-8-tablet is-size-5 content">
         <figure class="image">
-          <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.0" id="fibinocci" viewBox="0 0 950 580">
-            <path d="M 18.898132,563.14957 A 543.94263,543.75146 0 0 1 562.84077,19.398132" id="path1873" style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
-            <path style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="path1875" d="M -899.02731,355.46605 A 336.18655,336.06839 0 0 1 -562.84075,19.397675" transform="scale(-1,1)"/>
-            <path transform="matrix(0,-1,-1,0,0,0)" d="m -563.14906,-691.27235 a 207.68251,207.75557 0 0 1 207.68251,-207.75556" id="path2762" style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
-            <path style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="path2764" d="M 562.84128,-434.76319 A 128.43051,128.38536 0 0 1 691.27179,-563.14854" transform="scale(1,-1)"/>
-            <path d="m 562.84184,434.7637 a 79.324539,79.296654 0 0 1 79.32454,-79.29665" id="path2766" style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
-            <path style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="path2768" d="m -691.27137,404.55478 a 49.105476,49.088211 0 0 1 49.10548,-49.08821" transform="scale(-1,1)"/>
-            <path transform="scale(-1)" d="m -691.27178,-404.55426 a 30.218561,30.207939 0 0 1 30.21856,-30.20794" id="path2770" style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
-            <path style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="path2772" d="m 642.16632,-415.8829 a 18.886414,18.879776 0 0 1 18.88641,-18.87978" transform="scale(1,-1)"/>
-            <path d="m 642.16683,415.88342 a 11.331649,11.327665 0 0 1 11.33164,-11.32766" id="path2774" style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
-          </svg>
+          <svg style="height: 300px; width: 100%; transform: scale(1.5);" xmlns = "http://www.w3.org/2000/svg" version = "1.1" viewBox="0 0 35 34">
+                    <path id="fibonacci-path" stroke = "#ffffff" stroke-width = "0.5" viewBox="0 0 35 34" fill = "none" d = "
+      M0,0 A1,1 0 0 0 -2,0
+      A2,2 0 0 0 0,2
+      A3,3 0 0 0 3,-1
+      A5,5 0 0 0 -2,-6
+      A8,8 0 0 0 -10, 2
+      A13, 13 0 0 0 3, 15
+      A21, 21 0 0 0  24, -6
+      A34,34 0 0 0 -10, -40
+            ">
+                    </path>
+              </svg>
         </figure>
         <h1 class="title">
           Portfolio
@@ -339,44 +355,37 @@
           <div class="skill" id="html-skill">
             <a href="#html-skill" class="skill-thumbnail" title="Flutter"><img src="/asset/img/html.svg"></a>
             <div class="skill-explanation">
-              I'm fluent in HTML, CSS and JavaScript. I'm a fan of light webpages and using the least possible JavaScript,
-              so I avoid jQuery and most other frameworks at all costs. I'm also experienced with Bootstrap 3, Bootstrap 4 and Bulma, which I used to make this website.
-              I've got some experience with PHP too, but that's not really something to brag about.
+              HTML, CSS and JavaScript are what I use to build websites. I try to keep my webpages as light as possible and avoid JavaScript when I can. In fact, this website is completely JavaScript-free.
             </div>
           </div>
           <div class="skill" id="java-skill">
             <a href="#java-skill" class="skill-thumbnail" title="Flutter"><img src="/asset/img/java.svg"></a>
             <div class="skill-explanation">
-              Java was revolutionary when it came out. While there's a lot of better alternatives for most cases now, it was my first language and I still like to use it.
-              My experience in Java comes from making Spring servers and Android apps.
+              My experience in Java comes from Android apps, Swing desktop applications and Spring servers. While, I've never received any formal education on Java (or any programming language), I did pass the Advanced Placement exam for Java (AP Computer Science A).
             </div>
           </div>
           <div class="skill" id="python-skill">
             <a href="#python-skill" class="skill-thumbnail" title="Flutter"><img src="/asset/img/python.svg"></a>
             <div class="skill-explanation">
-              I'll never agree with using Python in production because of its lack of static typing, but I could jump into any Flask or Django project with no difficulty.
-              I'm also exploring TensorFlow and artificial intelligence with Python, and passed the TensorFlow developer exam. The certificate is on my LinkedIn account.
+              I've used Python during hackathons to create quick servers for apps with Flask. I'm also exploring TensorFlow and artificial intelligence with Python, and passed the TensorFlow developer exam. The certificate is on my LinkedIn account.
             </div>
           </div>
           <div class="skill" id="flutter-skill">
             <a href="#flutter-skill" class="skill-thumbnail" title="Flutter"><img src="/asset/img/flutter.svg"></a>
             <div class="skill-explanation">
-              Created by Google, Flutter is, framework for the Dart programming language, is my app development tool of choice. With it, I can build cross-platform mobile apps with 60 FPS animations.
-              I've <a href="#mcps-sidekick">published one app</a> with it and built many more.
+              Flutter is one of my more recent skills. I've <a href="#mcps-sidekick">published one app</a> with it and built many more.
             </div>
           </div>
           <div class="skill" id="go-skill">
             <a href="#go-skill" class="skill-thumbnail" title="Go"><img src="/asset/img/gopher.svg"></a>
             <div class="skill-explanation">
-              Created by Google, Go is a functional, garbage-collected language typically used to write servers.
-              I used it to make a <a href="#scriber">blogging website</a> as a learning project. I love Go's syntax and simplicity.
+              Go is my language of choice for creating servers. I used it to make a <a href="#scriber">blogging website</a> called Scriber as a learning project. I love Go's syntax and simplicity.
             </div>
           </div>
           <div class="skill" id="postgres-skill">
             <a href="#postgres-skill" class="skill-thumbnail" title="PostgreSQL"><img src="/asset/img/postgres.svg"></a>
             <div class="skill-explanation">
-              PostgreSQL is a relational database used by NASA, Instagram, Apple and many other companies. It includes support for functions and other great features, which is why it's my database of choice.
-              I can also use MySQL, though I have only used its basic features.
+              PostgreSQL is the relational database I have the most experience with. I used it to build a <a href="#scriber">blogging website</a> called Scriber. I can also use MySQL, though I have only used its basic features.
             </div>
           </div>
         </div>
@@ -426,14 +435,5 @@
       </div>
     </div>
   </section>
-  <script>
-    var svg = new Walkway({
-      selector: '#fibinocci',
-      duration: '2000',
-      // can pass in a function or a string like 'easeOutQuint'
-      easing: 'easeInCubic'
-    });
-  svg.draw();
-  </script>
 </body>
 </html>

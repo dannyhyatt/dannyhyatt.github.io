@@ -16,8 +16,6 @@ If you're considering hiring me, please do so.
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <script defer src="https://use.fontawesome.com/releases/v5.6.1/js/all.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/walkway.js/src/walkway.min.js"></script>
     <style>
       .profile-img {
         max-width: 512px; height: auto; margin: auto;width:100%;border-radius: 50%;
@@ -54,8 +52,14 @@ If you're considering hiring me, please do so.
         from { opacity: 0%; }
         to { opacity: 100% }
       }
+      @keyframes fadeOut {
+        from { opacity: 100%; }
+        to { opacity: 0% }
+      }
 
-
+      .section {
+        padding-top: 0;
+      }
 
       .bg-gradient {
           background: linear-gradient(13deg, #2fc879, #335d47, #ca7819);
@@ -172,6 +176,9 @@ If you're considering hiring me, please do so.
         .subtitle, .subtitle strong {
           color: #fff;
         }
+        a {
+          color: #aaccff;
+        }
         a:hover {
           color: #efefef;
         }
@@ -185,6 +192,18 @@ If you're considering hiring me, please do so.
         .social-link--linkedin:hover, .social-link--instagram:hover {
           filter: none;
         }
+      }
+
+      @keyframes elongate-path {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      #profile-img-svg {
+        stroke-dasharray: 5000;
+        stroke-dashoffset: 5000;
+        animation: elongate-path 3s linear forwards, fadeOut 1s ease-in-out 2s forwards;
       }
     </style>
 </head>
@@ -213,9 +232,8 @@ If you're considering hiring me, please do so.
           Hi, I'm Danny
         </h1>
         <p class="subtitle my-5">
-          I'm a <strong>high school student</strong> with a passion for <b>programming</b>, <b>soccer</b> and <b>biology</b>. If you'd like to learn more about me, you can check out my
-          <a href="/portfolio">portfolio</a>, <a href="/asset/files/dannyhyatt_resume.pdf">resume</a>, and
-          <a href="https://blog.dannyhyatt.com">blog</a>. If you'd like to get in touch, contact me by going to my social media accounts on the buttons below or <a href="mailto:hi@dannyhyatt.com">email me</a>.
+          I'm a <strong>college student</strong> with a passion for <b>programming</b>, <b>biology</b> and <b>soccer</b>. If you'd like to learn more about me, you can check out my
+          <a href="/portfolio">portfolio</a> or <a href="/asset/files/dannyhyatt_resume.pdf">resume</a>. If you'd like to get in touch, <a href="mailto:hi@dannyhyatt.com">email me</a> or contact me via social media.
         </p>
 
         <div class='has-text-centered'>
@@ -274,17 +292,5 @@ If you're considering hiring me, please do so.
       </div>
     </div>
   </section>
-  <script>
-    window.onload = function() {
-      var svg = new Walkway({
-      selector: '#profile-img-svg',
-      duration: '2000',
-      // can pass in a function or a string like 'easeOutQuint'
-      easing: 'easeOutQuint'
-      });
-      svg.draw();
-    }
-
-  </script>
 </body>
 </html>
