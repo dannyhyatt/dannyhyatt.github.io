@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resume | Danny Hyatt</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <style>
+      html {
+        background-color: #f9f9f9;
+        scroll-behavior: smooth;
+      }
+      .tab-row {
+        width: 100%;
+        height: 3em;
+        align-items: stretch;
+        display: flex;
+        font-size: 1rem;
+        justify-content: space-between;
+        overflow: hidden;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      .tab {
+        color: black !important;
+        border-bottom: 1px solid #4a4a4a;
+        align-items: center;
+        color: #4a4a4a;
+        display: flex;
+        justify-content: center;
+        padding: .5em 1em;
+      }
+      
+      .tab:hover {
+        padding: .5em 1em calc(.5em - 1px) 1em;
+        border-bottom: 2px solid black;
+      }
+
+      /* can't put classes in for this unfortunately */
+      #projects:target #projects-tab {
+        padding: .5em 1em calc(.5em - 1px) 1em;
+        border-bottom: 2px solid black;
+      }
+      #projects:target #projects-content {
+        display: block;
+      }
+      #experience:target #experience-tab {
+        padding: .5em 1em calc(.5em - 1px) 1em;
+        border-bottom: 2px solid black;
+      }
+      #experience:target #experience-content {
+        display: block;
+      }
+      #education:target #education-tab {
+        padding: .5em 1em calc(.5em - 1px) 1em;
+        border-bottom: 2px solid black;
+      }
+      #education:target #education-content {
+        display: block;
+      }
+      #contact:target #contact-tab {
+        padding: .5em 1em calc(.5em - 1px) 1em;
+        border-bottom: 2px solid black;
+      }
+      #contact:target #contact-content {
+        display: block;
+      }
+
+      #projects-content, #experience-content, #education-content, #contact-content {
+        display: none;
+        padding-bottom: 3rem;
+      }
+      .tab-contents {
+        position: relative;
+        padding-top: 1rem;
+      }
+      .tab-contents div {
+        position: absolute;
+        top: 1rem;
+        left: 0;
+      }
+
+      #default-content {
+        margin: auto;
+        text-align: center;
+        margin-top: 3rem;
+        width: 100%;
+      }
+      
+      :target #default-content {
+        display: none;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .header-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+      }
+      .header-container img {
+        height: 1.4rem;
+        align-self: center;
+        margin-left: 0.5rem;
+      }
+      .header-container img:nth-child(3) {
+        margin-left: auto;
+      }
+      .header-container p:nth-child(3) {
+        margin-left: auto;
+        align-self: center;
+      }
+      ul {
+        margin: 0!important;
+        font-size: 1rem;
+      }
+      .content li + li {
+        margin-top: 0;
+      }
+      i {
+        margin-left: 0.25rem;
+      }
+      #experience-content .header-container {
+        display: block;
+      }
+      #experience-content .header-container:not(:first-child) {
+        margin-top: 1em;
+      }
+      #experience-content h4, #education-content h4 {
+        font-size: 1em;
+        display: block;
+      }
+      #experience-content i, #experience-content p, #education-content i, #education-content p {
+        font-size: 1rem;
+        text-align: right;
+        display: inline;
+        margin-left: 0;
+      }
+      @media (prefers-color-scheme: dark) {
+        *:not(a), h4, .tab {
+          color: white!important;
+          border-color: white!important;
+        }
+        a {
+          color: #aaccff;
+        }
+        a:hover {
+          color: #efefef;
+        }
+        html {
+          background-color: #1e1e1e;
+        }
+        .invert-for-dark-mode {
+          filter: invert();
+        }
+        .aws-for-dark-mode {
+          /* it's hacky for the aws icon, okay??? */
+          filter: brightness(10) hue-rotate(310deg);
+        }
+      }
+      </style>
+</head>
+<body>
+
+  <section class="section">
+    <div class="columns">
+      <div class="column is-offset-3-desktop is-6-desktop is-offset-2-tablet is-8-tablet is-size-5 content">
+        <h1>Interactive Resume</h1>
+        <p>An interactive resume to make it easier for you to get to the information you want to see. If you'd like a printable, PDF version of my resume, click <a href="/asset/files/dannyhyatt_resume.pdf">here</a>.</p>
+        <!-- forgive me for this -->
+        <div id="projects"><div id="experience"><div id="education"><div id="contact">
+          <div class="tab-row">
+            <a href="#projects" class="tab" id="projects-tab">Projects</a>
+            <a href="#experience" class="tab" id="experience-tab">Experience</a>
+            <a href="#education" class="tab" id="education-tab">Eduation</a>
+            <a href="#contact" class="tab" id="contact-tab">Contact</a>
+          </div>
+          <div class="tab-contents">
+            <div id="default-content">Click a tab to get started.</div>
+            <div id="projects-content">
+              <span class="header-container">
+                <h4 class="is-inline mb-0">Kids For Code Website</h4>
+                <i>August 2020</i>
+                <img title="Web development" src="/asset/img/html.svg" class="invert-for-dark-mode">
+                <img title="Bootstrap CSS Framework" src="/asset/img/bootstrap.svg">
+              </span>
+              <p>
+                While working as a programming teacher for an organization called Kids For Code, I created their website using the Bootstrap CSS framework. I last updated it in March of 2021, but it is still up and maintained by the current teachers at Kids For Code. You can view the site live <a href="https://kidsforcode.org">here</a>.
+              </p>
+              <span class="header-container">
+                <h4 class="is-inline mb-0">Scriber</h4>
+                <i>June 2020</i>
+                <img title="Go" src="/asset/img/go.svg" style="height: 1.2rem">
+                <img title="PostgreSQL" src="/asset/img/postgres.svg">
+                <img title="AWS" src="/asset/img/aws.svg" style="height: 1.8rem" class="aws-for-dark-mode">
+                <img title="Markdown" src="/asset/img/markdown.svg" class="invert-for-dark-mode">
+              </span>
+              <p>
+                Scriber is a blogging platform I created as a hobby project, although it is designed to be scaled up to accomodate a large number of users. It uses markdown as a format to store articles, and Amazon S3 buckets to store images. Amazon Lightsail is used to run the server. View a live demo <a href="https://scriber.cc">here</a>.
+              </p>
+              <span class="header-container">
+                <h4 class="is-inline mb-0">MCPS Sidekick</h4>
+                <i>April 2019</i>
+                <img title="Flutter" src="/asset/img/flutter.svg">
+              </span>
+              <p>
+                MCPS Sidekick is a grade-viewer app I created and published in my junior year of high school. It originally used web requests to imitate to a server that it was a user logging in via a web browser. When MCPS changed to use a platform called StudentVue, I used their API and created a <a href="https://pub.dev/packages/studentvueclient/versions">Dart package</a> for others to use, which I left to a friend to update when I graduated high school. The app allows users to not only view their grades, but to modify scores on assignments to see what their grade would be if they received a different score on an assignment, as well as to add future assignments and input a score for them (ex. to see what grade they would need to get on a future quiz in order to get an A in a class). The project is no longer on the app store, and I am not maintaining it anymore as I'm not a user anymore. It is written in Flutter and released for iOS and Android. The GitHub repository is available <a href="https://github.com/dannyhyatt/mcps_sidekick">here</a>.
+              </p>
+            </div>
+            <div id="experience-content">
+              <span class="header-container">
+                <h4 class="mb-0">UMBC Department of Computer Science and Electrical Engineering</h4>
+                <i>System Administrator</i>
+                <p>May 2022 - August 2022</p>
+              </span>
+              <ul>
+                <li>
+                  Promoted to System Administrator when web project was complete (the job below)
+                </li>
+                <li>
+                  Worked with a team of other students to manage student accounts, servers, and provided support to professors & faculty
+                </li>
+                <li>
+                  Used Foreman, Puppet, Active Directory and other software to manage lab computers
+                </li>
+                <li>
+                  Managed inventory and physically set up lab computers
+                </li>
+              </ul>
+              <span class="header-container">
+                <h4 class="mb-0">UMBC Department of Computer Science and Electrical Engineering</h4>
+                <i>Web Editor</i>
+                <p>December 2021 - May 2022</p>
+              </span>
+              <ul>
+                <li>
+                  Migrated over 300 pages of UMBC's CSEE website to a new WordPress system
+                </li>
+                <li>
+                  Used HTML and CSS to make sure pages looked correct and professional, and used Python to automate parts of the job (mostly web scraping)
+                </li>
+              </ul>
+              <span class="header-container">
+                <h4 class="mb-0">Computer Science Summer Institute</h4>
+                <i>Student</i>
+                <p>July 2021 - August 2021</p>
+              </span>
+              <ul>
+                <li>
+                  Took part in a program created by Google, where a cohort of students are taught from current Google software engineers
+                </li>
+                <li>
+                  Learned the basics of Firebase Storage and Authentication
+                </li>
+                <li>
+                  Created a PWA called Tap Contacts as a final project, which allows users to have their contacts as a cloud service and allows specific people to access specific contact information (ex. your boss can only access your work number, friends can access home phone, address, birthday)
+                </li>
+                <li>
+                  To learn more about the program, click <a href="https://buildyourfuture.withgoogle.com/programs/computer-science-summer-institute">here</a>
+                </li>
+              </ul>
+              <span class="header-container">
+                <h4 class="mb-0">Kids For Code</h4>
+                <i>Teacher</i>
+                <p>June 2020 - May 2021</p>
+              </span>
+              <ul>
+                <li>
+                  Taught HTML/CSS, Java and Python to elementary and middle school students in a virtual classroom environment
+                </li>
+                <li>
+                  Created the HTML/CSS curriculum which helped Kids For Code teachers (including myself) teach over four hundred students across three eight-week sessions.
+                </li>
+                <li>
+                  Also created their website, which is listed in the projects section
+                </li>
+              </ul>
+              <span class="header-container">
+                <h4 class="mb-0">TIC Summer Camp</h4>
+                <i>Staff Assistant</i>
+                <p>June 2019 - August 2019</p>
+              </span>
+              <ul>
+                <li>
+                  Taught Java and web development, engaged and supervised children about learning and getting active, and learned to communicate effectively with other staff and parents while working as a staff assistant.	
+                </li>
+              </ul>
+            </div>
+            <div id="education-content">
+              <span>
+                <h4 class="mb-0 is-inline">University of Maryland, College Park</h4>
+                <p>Fall 2022 - Present</p>
+                <br>
+                <i>Computer Science w/ Neuroscience minor</i>
+              </span>
+              <br>
+              <span>
+                <h4 class="mb-0 is-inline">University of Maryland, Baltimore County</h4>
+                <p>Fall 2021 - Spring 2022</p>
+                <br>
+                <i>Bioinformatics</i>
+              </span>
+            </div>
+            <div id="contact-content">
+              <p>There are a two way you can get in touch with me:</p>
+              <ul>
+                <li>Email: <a href="mailto:hi@dannyhyatt.com">hi@dannyhyatt.com</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/dannyhyatt">https://www.linkedin.com/in/dannyhyatt</a></li>
+              </ul>
+            </div>
+          </div>
+        </div></div></div></div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
