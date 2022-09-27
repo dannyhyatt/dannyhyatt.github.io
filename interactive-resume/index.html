@@ -14,6 +14,14 @@
         background-color: #f9f9f9;
         scroll-behavior: smooth;
       }
+      .tab-row-wrapper {
+        position: sticky;
+        top: 0px;
+        background-color: #f9f9f9;
+        /* to cover up the bullet points on desktop when sticky scrolling */
+        margin-left: -16px;
+        padding-left: 16px;
+      }
       .tab-row {
         width: 100%;
         height: 3em;
@@ -62,26 +70,25 @@
       #education:target #education-content {
         display: block;
       }
-      #contact:target #contact-tab {
+      #other:target #other-tab {
         padding: .5em 1em calc(.5em - 1px) 1em;
         border-bottom: 2px solid black;
       }
-      #contact:target #contact-content {
+      #other:target #other-content {
         display: block;
       }
 
-      #projects-content, #experience-content, #education-content, #contact-content {
+      #projects-content, #experience-content, #education-content, #other-content {
         display: none;
         padding-bottom: 3rem;
       }
       .tab-contents {
-        position: relative;
+        display: grid;
         padding-top: 1rem;
       }
       .tab-contents div {
-        position: absolute;
-        top: 1rem;
-        left: 0;
+        grid-column: 1;
+        grid-row: 1;
       }
 
       #default-content {
@@ -133,11 +140,13 @@
       #experience-content .header-container:not(:first-child) {
         margin-top: 1em;
       }
-      #experience-content h4, #education-content h4 {
+      #experience-content h4, #education-content h4, #other-content h4 {
         font-size: 1em;
         display: block;
       }
-      #experience-content i, #experience-content p, #education-content i, #education-content p {
+      #experience-content i, #experience-content p,
+      #education-content i, #education-content p,
+      #other-content i, #other-content p{
         font-size: 1rem;
         text-align: right;
         display: inline;
@@ -154,7 +163,7 @@
         a:hover {
           color: #efefef;
         }
-        html {
+        html, .tab-row-wrapper {
           background-color: #1e1e1e;
         }
         .invert-for-dark-mode {
@@ -165,6 +174,18 @@
           filter: brightness(10) hue-rotate(310deg);
         }
       }
+
+      @media (max-width: 769px) {
+        #projects-content .header-container {
+          flex-wrap: wrap;
+        }
+        #projects-content .header-container h4 {
+          flex-basis: 100%
+        }
+        #projects-content .header-container i {
+          margin-left: 0;
+        }
+      }
       </style>
 </head>
 <body>
@@ -173,14 +194,17 @@
     <div class="columns">
       <div class="column is-offset-3-desktop is-6-desktop is-offset-2-tablet is-8-tablet is-size-5 content">
         <h1>Interactive Resume</h1>
-        <p>An interactive resume to make it easier for you to get to the information you want to see. If you'd like a printable, PDF version of my resume, click <a href="/asset/files/dannyhyatt_resume.pdf">here</a>.</p>
+        <p>An interactive resume to make it easier for you to get to the information you want to see. If you'd like a printable, PDF version of my resume, click <a href="/asset/files/dannyhyatt_resume.pdf">here</a>. If you like what you see, you can email me at <a href="mailto:hi@dannyhyatt.com">hi@dannyhyatt.com</a>.</p>
         <!-- forgive me for this -->
-        <div id="projects"><div id="experience"><div id="education"><div id="contact">
-          <div class="tab-row">
-            <a href="#projects" class="tab" id="projects-tab">Projects</a>
-            <a href="#experience" class="tab" id="experience-tab">Experience</a>
-            <a href="#education" class="tab" id="education-tab">Eduation</a>
-            <a href="#contact" class="tab" id="contact-tab">Contact</a>
+        <div id="projects"><div id="experience"><div id="education"><div id="other">
+          <!-- this is to hide the bullet points when scrolling and making use of the positon sticky -->
+          <div class="tab-row-wrapper">
+            <div class="tab-row">
+              <a href="#projects" class="tab" id="projects-tab">Projects</a>
+              <a href="#experience" class="tab" id="experience-tab">Experience</a>
+              <a href="#education" class="tab" id="education-tab">Eduation</a>
+              <a href="#other" class="tab" id="other-tab">Other</a>
+            </div>
           </div>
           <div class="tab-contents">
             <div id="default-content">Click a tab to get started.</div>
@@ -214,7 +238,12 @@
                 MCPS Sidekick is a grade-viewer app I created and published in my junior year of high school. It originally used web requests to imitate to a server that it was a user logging in via a web browser. When MCPS changed to use a platform called StudentVue, I used their API and created a <a href="https://pub.dev/packages/studentvueclient/versions">Dart package</a> for others to use, which I left to a friend to update when I graduated high school. The app allows users to not only view their grades, but to modify scores on assignments to see what their grade would be if they received a different score on an assignment, as well as to add future assignments and input a score for them (ex. to see what grade they would need to get on a future quiz in order to get an A in a class). The project is no longer on the app store, and I am not maintaining it anymore as I'm not a user anymore. It is written in Flutter and released for iOS and Android. The GitHub repository is available <a href="https://github.com/dannyhyatt/mcps_sidekick">here</a>.
               </p>
             </div>
+
             <div id="experience-content">
+
+              <h6 style="font-weight: 600;" class="mb-0 mt-4">Paid Positions</h6>
+              <hr class="mt-0 mb-1" style="height:1px">
+
               <span class="header-container">
                 <h4 class="mb-0">UMBC Department of Computer Science and Electrical Engineering</h4>
                 <i>System Administrator</i>
@@ -234,6 +263,7 @@
                   Managed inventory and physically set up lab computers
                 </li>
               </ul>
+
               <span class="header-container">
                 <h4 class="mb-0">UMBC Department of Computer Science and Electrical Engineering</h4>
                 <i>Web Editor</i>
@@ -247,6 +277,7 @@
                   Used HTML and CSS to make sure pages looked correct and professional, and used Python to automate parts of the job (mostly web scraping)
                 </li>
               </ul>
+
               <span class="header-container">
                 <h4 class="mb-0">Computer Science Summer Institute</h4>
                 <i>Student</i>
@@ -254,7 +285,7 @@
               </span>
               <ul>
                 <li>
-                  Took part in a program created by Google, where a cohort of students are taught from current Google software engineers
+                  Took part in a program created by Google, where a cohort of students are taught from current Google software engineers, and received a stipend for participation
                 </li>
                 <li>
                   Learned the basics of Firebase Storage and Authentication
@@ -266,6 +297,63 @@
                   To learn more about the program, click <a href="https://buildyourfuture.withgoogle.com/programs/computer-science-summer-institute">here</a>
                 </li>
               </ul>
+              
+              <span class="header-container">
+                <h4 class="mb-0">TIC Summer Camp</h4>
+                <i>Staff Assistant</i>
+                <p>June 2019 - August 2019</p>
+              </span>
+              <ul>
+                <li>
+                  Taught Java and web development, engaged and supervised children about learning and getting active, and learned to communicate effectively with other staff and parents while working as a staff assistant.	
+                </li>
+              </ul>
+
+              <h6 style="font-weight: 600;" class="mb-0 mt-6">Volunteer Positions</h6>
+              <hr class="mt-0 mb-1" style="height:1px">
+
+              <span class="header-container">
+                <h4 class="mb-0">Ruben Amaya Campaign Advocate</h4>
+                <i>Canvasser</i>
+                <p>November 2021 - July 2022</p>
+              </span>
+              <ul>
+                <li>
+                  Volunteered once a week for Ruben Amaya, a 21 year old candidate for State Delegate, canvassing door-to-door and talking to potential voters with Ruben Amaya
+                </li>
+                <li>
+                  Attended Ruben Amaya events and fundrasiers
+                </li>
+                <li>
+                  Poll watched during the primary election at the most popular voting location in Baltimore County
+                </li>
+              </ul>
+
+              <span class="header-container">
+                <h4 class="mb-0">BARCS Animal Shelter</h4>
+                <i>Dog Walker</i>
+                <p>February 2022 - May 2022</p>
+              </span>
+              <ul>
+                <li>
+                  Went to BARCS animal shelter weekly to walk dogs and keep them active
+                </li>
+              </ul>
+
+              <span class="header-container">
+                <h4 class="mb-0">Walden Circle</h4>
+                <i>Supervisor</i>
+                <p>September 2021 - May 2022</p>
+              </span>
+              <ul>
+                <li>
+                  Volunteered weekly, with some additional weekends, to provide free after-school care to local children without access
+                </li>
+                <li>
+                  Helped kids with homework, played sports to help the kids get active and fostered a positive, fun environment
+                </li>
+              </ul>
+
               <span class="header-container">
                 <h4 class="mb-0">Kids For Code</h4>
                 <i>Teacher</i>
@@ -282,17 +370,8 @@
                   Also created their website, which is listed in the projects section
                 </li>
               </ul>
-              <span class="header-container">
-                <h4 class="mb-0">TIC Summer Camp</h4>
-                <i>Staff Assistant</i>
-                <p>June 2019 - August 2019</p>
-              </span>
-              <ul>
-                <li>
-                  Taught Java and web development, engaged and supervised children about learning and getting active, and learned to communicate effectively with other staff and parents while working as a staff assistant.	
-                </li>
-              </ul>
             </div>
+
             <div id="education-content">
               <span>
                 <h4 class="mb-0 is-inline">University of Maryland, College Park</h4>
@@ -308,11 +387,70 @@
                 <i>Bioinformatics</i>
               </span>
             </div>
-            <div id="contact-content">
-              <p>There are a two way you can get in touch with me:</p>
+
+            <div id="other-content">
+
+              <h6 style="font-weight: 600;" class="mb-0 mt-4">Certifications</h6>
+              <hr class="mt-0 mb-4" style="height:1px">
+
+              <span class="header-container">
+                <h4 class="mb-0 mr-2">TensorFlow Developer Certificate</h4>
+                <p>December 2020</p>
+              </span>
               <ul>
-                <li>Email: <a href="mailto:hi@dannyhyatt.com">hi@dannyhyatt.com</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/dannyhyatt">https://www.linkedin.com/in/dannyhyatt</a></li>
+                <li>
+                  TensorFlow is an artifical intelligence library developed by Google
+                </li>
+                <li>
+                  Passed the TensorFlow exam developed by Google to receive the certificate (<a href="https://www.credential.net/f3bfe20a-c5d8-4895-80c3-2d0db5077887#gs.dtwno6">view certificate</a>)
+                </li>
+                <li>
+                  Self-studied and learned the basics of normalizing data and building simple image classification, NLP, prediction machine learning models using CNN, RNN and LSTM neural networks
+                </li>
+              </ul>
+
+              <h6 style="font-weight: 600;" class="mb-0 mt-4">Awards</h6>
+              <hr class="mt-0 mb-4" style="height:1px">
+
+              <span class="header-container">
+                <h4 class="mb-0 mr-2">hackUMBC "Best Community Hack"</h4>
+                <p>October 2021</p>
+              </span>
+              <ul>
+                <li>
+                  Created an unofficial UMBC app to help UMBC students because the official app had limited features and was very buggy
+                </li>
+                <li>
+                  Created RSS feed page for school newspaper for convenience in the app
+                </li>
+                <li>
+                  Created a table that listed the restaurant's hours in which listed the opening times for the current day and had search feature
+                </li>
+                <li>
+                  Mentored a friend in creating a map feature that would show users where a specific room is on campus and what part of the building it is in
+                </li>
+                <li>
+                  Won out of 200+ participants with a two person team (four allowed per team max.)
+                </li>
+                <li>
+                  View the project on GitHub <a href="https://github.com/dannyhyatt/retriever-helper">here</a>
+                </li>
+              </ul>
+
+              <h6 style="font-weight: 600;" class="mb-0 mt-4">Extracurriculars</h6>
+              <hr class="mt-0 mb-4" style="height:1px">
+
+              <span class="header-container">
+                <h4 class="mb-0 mr-2">UMBC Club Soccer Team</h4>
+                <p>October 2021 - May 2022</p>
+              </span>
+              <ul>
+                <li>
+                  Stayed active with weekly practices
+                </li>
+                <li>
+                  Learned to work and communicate as a team even under stressful situations
+                </li>
               </ul>
             </div>
           </div>
