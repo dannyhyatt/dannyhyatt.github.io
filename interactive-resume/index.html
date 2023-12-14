@@ -125,10 +125,10 @@
         align-self: center;
         margin-left: 0.5rem;
       }
-      .header-container img:nth-child(3) {
+      .header-container img:nth-child(4) {
         margin-left: auto;
       }
-      .header-container p:nth-child(3) {
+      .header-container p:nth-child(4) {
         margin-left: auto;
         align-self: center;
       }
@@ -160,6 +160,20 @@
         display: inline;
         margin-left: 0;
       }
+
+      h6 + span.mobile-only + i {
+        font-size: 1rem;
+        margin-left: 0;
+      }
+
+      .header-container > h6 {
+        margin-right: 0.5rem;
+      }
+
+      span.mobile-only {
+        display: none;
+      }
+
       @media (prefers-color-scheme: dark) {
         *:not(a), h4, .tab {
           color: white!important;
@@ -190,8 +204,11 @@
         #projects-content .header-container h4 {
           flex-basis: 100%
         }
-        #projects-content .header-container i {
-          margin-left: 0;
+        span.mobile-only {
+          display: block;
+          width: 100%;
+          height: 0;
+          margin: 0;
         }
       }
       </style>
@@ -218,7 +235,8 @@
             <div id="default-content">Click a tab to get started.</div>
             <div id="projects-content">
               <span class="header-container">
-                <h4 class="is-inline mb-0">Kids For Code Website</h4>
+                <h6 class="is-inline mb-0">Kids For Code Website</h6>
+                <span class="mobile-only"></span>
                 <i>August 2020</i>
                 <img title="Web development" src="/asset/img/html.svg" class="invert-for-dark-mode">
                 <img title="Bootstrap CSS Framework" src="/asset/img/bootstrap.svg">
@@ -227,7 +245,8 @@
                 While working as a programming teacher for an organization called Kids For Code, I created their website using the Bootstrap CSS framework. I last updated it in March of 2021, but it is still up and maintained by the current teachers at Kids For Code. You can view the GitHub repository here. <a href="https://github.com/dannyhyatt/kidsforcode.org">here</a>.
               </p>
               <span class="header-container">
-                <h4 class="is-inline mb-0">Scriber</h4>
+                <h6 class="is-inline mb-0">Scriber</h6>
+                <span class="mobile-only"></span>
                 <i>June 2020</i>
                 <img title="Go" src="/asset/img/go.svg" style="height: 1.2rem">
                 <img title="PostgreSQL" src="/asset/img/postgres.svg">
@@ -238,7 +257,8 @@
                 Scriber is a blogging platform I created as a hobby project, although it is designed to be scaled up to accomodate a large number of users. It uses markdown as a format to store articles, and Amazon S3 buckets to store images. Amazon Lightsail is used to run the server.
               </p>
               <span class="header-container">
-                <h4 class="is-inline mb-0">MCPS Sidekick</h4>
+                <h6 class="is-inline mb-0">MCPS Sidekick</h6>
+                <span class="mobile-only"></span>
                 <i>April 2019</i>
                 <img title="Flutter" src="/asset/img/flutter.svg">
               </span>
