@@ -19,8 +19,9 @@ If you're considering hiring me, please do so.
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <style>
-      html {
-        overflow-y: auto;
+      body {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
       }
       .profile-img {
         max-width: 384px; height: auto; margin: auto;width:100%;border-radius: 32px;
@@ -108,45 +109,49 @@ If you're considering hiring me, please do so.
           100%{background-position:86% 0%}
       }
 
-      #gradient-border {
-        height: 100%;
-        width: 100%;
-        display: block;
-        position: relative;
-        top: 0;
-        left: 0;
-        border-radius: 50%;
+      .social-link {
+        width: 4rem;
+        height: 4rem;
+        display: inline-flex;
+        border: 4px solid black;
+        border-radius: 18px;
+        background-color: white;
+        z-index: 1000;
+        transition: background-color 0.3s;
+        transition: box-shadow 0.3s;
       }
 
-      .social-link .social-svg {
-        width: 4.8rem;
-        height: 4.8rem;
+      .social-link:hover, .social-link:active, .social-link:focus {
+        box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.7);
       }
+
+      #github:hover, #github:active, #github:focus {
+        background-color: black;
+      }
+
+      #linkedin:hover, #linkedin:active, #linkedin:focus {
+        background-color: #2d76b0;
+        border-color: #2d76b0;
+      }
+
+      #instagram:hover  {
+        background-image: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);;
+        border-width: 0;
+        padding: 4px;
+      }
+
       .social-link .social-svg .social-group__icon {
         fill: #191308;
-        transition: all 0.2s;
+        transition: all 0.3s;
       }
-      .social-link .social-svg .social-group__inner-circle {
-        fill: transparent;
-        transition: all 0.2s;
-      }
-      .social-link .social-svg .social-group__outline {
-        stroke: #191308;
-        transform-origin: 50% 50%;
-        transition: all 0.2s;
-      }
-      .social-link .social-svg:hover .social-group__icon, .social-link .social-svg:active .social-group__icon, .social-link .social-svg:focus .social-group__icon {
+      .social-link:hover .social-svg .social-group__icon, .social-link:active .social-svg .social-group__icon, .social-link:focus .social-svg .social-group__icon {
         fill: #FFFBFA;
-        transition: all 0.45s;
-      }
-      .social-link .social-svg:hover .social-group__inner-circle, .social-link .social-svg:active .social-group__inner-circle, .social-link .social-svg:focus .social-group__inner-circle {
-        fill: currentColor;
-        transition: all 0.45s;
+        transition: all 0.3s;
       }
       .social-link .social-svg:hover .social-group__outline, .social-link .social-svg:active .social-group__outline, .social-link .social-svg:focus .social-group__outline {
         stroke: currentColor;
         transform: scale(1);
-        transition: all 0.45s;
+        transition: all 0.3s;
       }
       .social-link--linkedin, .social-link--linkedin:hover {
         color: #2d76b0;
@@ -156,12 +161,6 @@ If you're considering hiring me, please do so.
       }
       .social-link--instagra, .social-link--instagram:hover {
         color: #9a2970;
-      }
-      .social-link .social-svg:hover .social-group__inner-circle--instagram, .social-link .social-svg:active .social-group__inner-circle--instagram, .social-link .social-svg:focus .social-group__inner-circle--instagram {
-        fill: url(#simpleInsta) !important;
-      }
-      .social-link--instagram .social-svg:hover .social-group .social-group__outline, .social-link--instagram .social-svg:active .social-group .social-group__outline,.social-link--instagram .social-svg:focus .social-group .social-group__outline {
-        stroke: url(#simpleInsta) !important;
       }
 
       #mobile-bio {
@@ -243,6 +242,7 @@ If you're considering hiring me, please do so.
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        padding: 0;
       }
 
       #side-text-desktop {
@@ -250,6 +250,17 @@ If you're considering hiring me, please do so.
         align-items: center;
         justify-content: center;
         flex-direction: column;
+      }
+
+      .columns {
+        margin: 0;
+      }
+
+      #buttons-row {
+        line-height: 1;
+        padding-bottom: 12px;
+        display: flex;
+        gap: 8px;
       }
     </style>
 </head>
@@ -276,13 +287,11 @@ If you're considering hiring me, please do so.
           </p>
         </span>
 
-        <div class='has-text-centered'>
+        <div class='has-text-centered' id="buttons-row">
           <a class="social-link social-link--github" id="github" href="https://github.com/dannyhyatt">
             <svg class="social-svg" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
               <title>GitHub</title>
               <g class="social-group" fill="none" fill-rule="evenodd">
-                <rect class="social-group__outline" stroke-width="25" stroke="#000" x="50" y="50" height="500" width="500" rx="80"></rect>
-                <rect class="social-group__inner-circle" fill="#000" x="62.5" y="62.5" height="475" width="475" rx="60"></rect>
                 <path class="social-group__icon" d="M300 150c-82.8348 0-150 68.8393-150 153.817 0 67.9687 42.991 125.558 102.5893 145.9151 7.5 1.4063 10.2455-3.3482 10.2455-7.433 0-3.683-.134-13.3259-.2009-26.183-41.7187 9.308-50.558-20.625-50.558-20.625-6.8304-17.7456-16.6741-22.5-16.6741-22.5-13.5938-9.576 1.0044-9.375 1.0044-9.375 15.067 1.0714 22.9688 15.8705 22.9688 15.8705 13.3929 23.5045 35.0893 16.741 43.6607 12.7902 1.3393-9.9107 5.2232-16.741 9.509-20.558-33.2813-3.884-68.3036-17.076-68.3036-76.0045 0-16.808 5.8259-30.5357 15.4018-41.25-1.5402-3.884-6.6965-19.5536 1.4732-40.7143 0 0 12.5893-4.1518 41.25 15.7366 11.9866-3.4152 24.7768-5.0893 37.567-5.1562 12.7231.067 25.5803 1.741 37.5669 5.1562 28.6607-19.8884 41.183-15.7366 41.183-15.7366 8.1697 21.1607 3.0134 36.8304 1.4733 40.7143 9.5758 10.7812 15.4017 24.509 15.4017 41.25 0 59.0625-35.0892 72.0536-68.5044 75.8705 5.3571 4.7545 10.1785 14.1295 10.1785 28.4598 0 20.558-.2009 37.1652-.2009 42.1875 0 4.0849 2.6786 8.9063 10.3125 7.3661C407.076 429.308 450 371.7187 450 303.817 450 218.8393 382.8348 150 300 150z"
                   fill="#FFF" fill-rule="nonzero" />
               </g>
@@ -292,8 +301,6 @@ If you're considering hiring me, please do so.
             <svg class="social-svg" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
               <title>LinkedIn</title>
               <g class="social-group" fill="none" fill-rule="evenodd">
-                <rect class="social-group__outline" stroke-width="25" stroke="#000" x="50" y="50" height="500" width="500" rx="80"></rect>
-                <rect class="social-group__inner-circle" fill="#2D76B0" x="62.5" y="62.5" height="475" width="475" rx="60"></rect>
                 <path class="social-group__icon" d="M278.9308 253.1923h43.5769v20.0539h.5923c6.0923-11.5077 20.9-23.6077 43.0692-23.6077 46.0308 0 54.577 30.2923 54.577 69.723v80.2154h-45.4385v-71.1615c0-17.0077-.2539-38.8385-23.6077-38.8385-23.6923 0-27.2462 18.5308-27.2462 37.5693v72.4307h-45.4384l-.0846-146.3846zm-74.1231 0h45.523V399.577h-45.523V253.1923zm22.8461-72.7692c14.5539 0 26.4 11.8461 26.4 26.4 0 14.5538-11.8461 26.4-26.4 26.4-14.6384 0-26.4-11.8462-26.4-26.4 0-14.5539 11.7616-26.4 26.4-26.4z"
                   fill="#000" fill-rule="nonzero" />
               </g>
@@ -302,37 +309,16 @@ If you're considering hiring me, please do so.
           <a class="social-link social-link--instagram" id="instagram" href="https://instagram.com/dannyhyatt_">
             <svg class="social-svg" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
               <title>Instagram</title>
-              <defs>
-                <radialGradient r="150%" cx="30%" cy="107%" id="simpleInsta">
-                  <stop stop-color="#fdf497" offset="0%" />
-                  <stop stop-color="#fdf497" offset="5%" />
-                  <stop stop-color="#fd5949" offset="45%" />
-                  <stop stop-color="#d6249f" offset="60%" />
-                  <stop stop-color="#285AEB" offset="90%" />
-                </radialGradient>
-
-                <radialGradient r="150%" cx="30%" cy="107%" id="simpleInsta2">
-                  <stop stop-color="#fdf497" offset="0%" />
-                  <stop stop-color="#fdf497" offset="5%" />
-                  <stop stop-color="#fd5949" offset="45%" />
-                  <stop stop-color="#d6249f" offset="60%" />
-                  <stop stop-color="#285AEB" offset="90%" />
-                </radialGradient>
-              </defs>
-              <g class="social-group" fill="none" fill-rule="evenodd">
-
-                <rect class="social-group__outline" stroke-width="25" stroke="#000" x="50" y="50" height="500" width="500" rx="80"></rect>
-                <rect class="social-group__inner-circle social-group__inner-circle--instagram" fill="url(#simpleInsta)" x="62.5" y="62.5" height="475" width="475" rx="60"></rect>
-
+              <g class="social-group" fill="#000" fill-rule="evenodd">
                 <path class="social-group__icon" d="M436.8577 205.4154c-3.6808-9.4808-8.5885-17.5116-16.6192-25.5423-8.0308-8.0308-16.0616-12.9385-25.5423-16.6193-9.1462-3.5692-19.7424-6.023-35.0231-6.6923-15.3923-.6692-20.3-.8923-59.5616-.8923-39.2615 0-44.1692.1116-59.5615.8923-15.3923.6693-25.877 3.1231-35.023 6.6923-9.4808 3.6808-17.5116 8.5885-25.5424 16.6193-8.0308 8.0307-12.9384 16.0615-16.6192 25.5423-3.5692 9.1461-6.023 19.7423-6.6923 35.023-.6693 15.3924-.8923 20.3-.8923 59.5616 0 39.2615.1115 44.1692.8923 59.5615.6692 15.3923 3.123 25.877 6.6923 35.0231 3.6808 9.4808 8.5884 17.5116 16.6192 25.5423 8.0308 8.0308 16.0616 12.9385 25.5423 16.6193 9.1462 3.5692 19.7423 6.023 35.0231 6.6923 15.3923.6692 20.3.8923 59.5615.8923 39.2616 0 44.1693-.1116 59.5616-.8923 15.3923-.6693 25.8769-3.1231 35.023-6.6923 9.4808-3.6808 17.5116-8.5885 25.5424-16.6193 8.0307-8.0307 12.9384-16.0615 16.6192-25.5423 3.5692-9.1461 6.023-19.7423 6.6923-35.023.6692-15.3924.8923-20.3.8923-59.5616 0-39.2615-.1115-44.1692-.8923-59.5615-.6692-15.3923-3.123-25.877-6.6923-35.0231zm-19.2962 152.9192c-.6692 14.0539-3.0115 21.75-5.0192 26.7692-2.5654 6.6924-5.8 11.6-10.8192 16.6193-5.0193 5.0192-9.8154 8.1423-16.6193 10.8192-5.1307 2.0077-12.7153 4.35-26.7692 5.0192-15.2808.6693-19.7423.8923-58.3346.8923s-43.1654-.1115-58.3346-.8923c-14.0539-.6692-21.75-3.0115-26.7692-5.0192-6.6924-2.5654-11.6-5.8-16.6193-10.8192-5.0192-5.0193-8.1423-9.8154-10.8192-16.6193-2.0077-5.1307-4.35-12.7153-5.0192-26.7692-.6693-15.2808-.8923-19.8538-.8923-58.3346s.1115-43.1654.8923-58.3346c.6692-14.0539 3.0115-21.75 5.0192-26.7692 2.5654-6.6924 5.8-11.6 10.8192-16.6193 5.0193-5.0192 9.8154-8.1423 16.6193-10.8192 5.1307-2.0077 12.7153-4.35 26.7692-5.0192 15.2808-.6693 19.8538-.8923 58.3346-.8923s43.1654.1115 58.3346.8923c14.0539.6692 21.75 3.0115 26.7692 5.0192 6.6924 2.5654 11.6 5.8 16.6193 10.8192 5.0192 5.0193 8.1423 9.8154 10.8192 16.6193 2.0077 5.1307 4.35 12.7153 5.0192 26.7692.6693 15.2808.8923 19.8538.8923 58.3346s-.223 43.1654-.8923 58.3346zM300 225.827c-40.9346 0-74.173 33.2385-74.173 74.1731s33.2384 74.173 74.173 74.173 74.173-33.2384 74.173-74.173-33.2384-74.173-74.173-74.173zm0 122.3577c-26.5462 0-48.1846-21.527-48.1846-48.1846 0-26.5462 21.527-48.1846 48.1846-48.1846 26.6577 0 48.1846 21.527 48.1846 48.1846 0 26.5462-21.6384 48.1846-48.1846 48.1846zm77.073-107.9692c-9.548 0-17.2884-7.7403-17.2884-17.2885 0-9.5481 7.7403-17.2884 17.2885-17.2884 9.5481 0 17.2884 7.7403 17.2884 17.2884 0 9.5482-7.7403 17.2885-17.2884 17.2885z"
-                  fill="#FFF" fill-rule="nonzero" />
+                fill="#000" fill-rule="nonzero" />
               </g>
             </svg>
           </a>
         </div>
       </div>
       <div class="column is-4-desktop is-8-tablet"  id="side-text-desktop">
-        <!-- duplicated in the previous column -->
+        <!-- duplicated from the previous column -->
         <h1 class="title">
           Hi, I'm Danny
         </h1>
