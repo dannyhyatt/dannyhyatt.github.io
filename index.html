@@ -1,7 +1,6 @@
 <!--
 
 Hello, fellow human, thanks for checking out my source code!
-If you're considering hiring me, please do so.
 
 -->
 
@@ -20,12 +19,15 @@ If you're considering hiring me, please do so.
     <link rel="manifest" href="/site.webmanifest">
     <style>
       .profile-img {
-        max-width: 384px; height: auto; margin: auto;width:100%;border-radius: 32px;
+        max-width: 384px; 
+        height: auto;
+        margin: auto;
+        width:100%;
+        animation-fill-mode: forwards;
       }
       .profile-img, .profile-img path, .profile-img polyline {
         stroke:#000;
         stroke-width:4pt;
-
       }
       #profile-img-svg path{
         fill: #00000000;
@@ -38,16 +40,16 @@ If you're considering hiring me, please do so.
         transform: translateX(-50%);
         animation: fadeIn 1s ease-in 2s reverse;
         animation-fill-mode: forwards;
-
-        box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.7);
+        border-radius: 0px;
       }
 
       #profile-img-jpg {
         opacity: 0;
+        z-index: 1;
         animation: fadeIn 1s linear 2s;
         animation-fill-mode: forwards;
         border-radius: 32px;
-        box-shadow: 0px -2px 14px 1px rgba(0,0,0,0.7), 0px -2px, 2px 2px 0px 0px rgba(0,0,0,1) inset, -2px -2px 0px 0px rgba(0,0,0,1) inset;
+        box-shadow: 0px -2px 14px 1px rgba(0,0,0,0.7);
       }
 
       #profile-img-wrapper {
@@ -57,6 +59,7 @@ If you're considering hiring me, please do so.
         max-width: 512px;
         margin-top: 32px;
         margin-bottom: 32px;
+        /* animation: shadowChange 1s ease-in-out forwards;  */
       }
 
       @keyframes fadeIn {
@@ -109,8 +112,7 @@ If you're considering hiring me, please do so.
         display: inline-flex;
         border-radius: 18px;
         z-index: 1000;
-        /* transition: background-color 0.3s; */
-        transition: box-shadow 0.1s;
+        transition: background-color 0.3s ease-in 0s, background-image 0.3s ease-in 0s, fill 0.3s ease-in 0s, stroke 0.3s ease-in 0s, transform 0.3s ease-in 0s, box-shadow 0.1s;
       }
 
       .social-link-wrapper {
@@ -140,10 +142,6 @@ If you're considering hiring me, please do so.
         /* border: 1px solid white; */
       }
 
-      .social-link-wrapper:hover > .social-link-bg {
-        box-shadow: 0 0 4px 4px white inset;
-      }
-
       #github:hover, #github:active, #github:focus {
         background-color: black;
       }
@@ -154,8 +152,18 @@ If you're considering hiring me, please do so.
       }
 
       #instagram:hover, #instagram:active, #instagram:focus  {
-        background-image: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);;
+        background-color: #00000000;
         border-width: 0;
+      }
+
+      .social-link-bg--instagram {
+        background-image: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);;
+        opacity: 0;
+        transition: opacity 0.3s ease-in 0s;
+      }
+
+      .social-link-wrapper:hover > .social-link-bg--instagram {
+        opacity: 100%;
       }
 
       #instagram .social-group {
@@ -166,18 +174,19 @@ If you're considering hiring me, please do so.
         padding: 2px;
       }
 
+      .social-svg {
+        height: 100%; /* fix for safari */ 
+      }
+
       .social-link .social-svg .social-group__icon {
         fill: #191308;
-        transition: all 0.3s;
       }
       .social-link:hover .social-svg .social-group__icon, .social-link:active .social-svg .social-group__icon, .social-link:focus .social-svg .social-group__icon {
         fill: #FFFBFA;
-        transition: all 0.3s;
       }
       .social-link .social-svg:hover .social-group__outline, .social-link .social-svg:active .social-group__outline, .social-link .social-svg:focus .social-group__outline {
         stroke: currentColor;
         transform: scale(1);
-        transition: all 0.3s;
       }
       .social-link--linkedin, .social-link--linkedin:hover {
         color: #2d76b0;
@@ -221,12 +230,13 @@ If you're considering hiring me, please do so.
         }
         #profile-img-svg {
           fill: white;
-          border: 3px solid white;
           box-shadow: 0px 0px 14px 1px rgba(255, 255, 255, 0.7);
+          background-color: transparent;
+          -webkit-mask-image: -webkit-radial-gradient(white, black);
+
         }
         #profile-img-jpg {
-          border: 4pt solid white;
-          box-shadow: 0px -2px 14px 1px rgba(255, 255, 255, 0.7), 0px -2px, 2px 2px 0px 0px rgb(255, 255, 255) inset, -2px -2px 0px 0px rgb(255, 255, 255) inset;
+          box-shadow: 0px -2px 14px 1px rgba(255, 255, 255, 0.7);
         }
         .title {
           color: #efefef;
@@ -251,7 +261,7 @@ If you're considering hiring me, please do so.
         }
         .social-link:hover:not(#github), .social-link:active:not(#github), .social-link:focus:not(#github) {
           /* box-shadow: 0px 0px 6px 1px rgba(255, 255, 255, 1); */
-          box-shadow: 0 0 8px 8px white inset;
+          /* box-shadow: 0 0 8px 8px white inset; */
         }
       }
 
@@ -264,6 +274,7 @@ If you're considering hiring me, please do so.
       #profile-img-svg {
         stroke-dasharray: 5000;
         stroke-dashoffset: 5000;
+        opacity: 100%;
         animation: elongate-path 3s linear forwards, fadeOut 1s ease-in-out 2s forwards;
       }
 
