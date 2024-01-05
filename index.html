@@ -134,7 +134,7 @@ Hello, fellow human, thanks for checking out my source code!
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        background-color: #fff;
+        /* background-color: #fff; */
         /* box-shadow: 0 0 4px 4px #fff inset; */
       }
 
@@ -253,9 +253,14 @@ Hello, fellow human, thanks for checking out my source code!
         .profile-img, .profile-img path, .profile-img polyline {
           stroke:#fff;
         }
-        .social-link {
+        .social-svg {
           filter: invert(100%);
+          transition: filter 0.3s ease-in;
         }
+        .social-svg:hover {
+          filter: none;
+        }
+        .social
         .social-link--linkedin:hover, .social-link--instagram:hover {
           filter: none;
         }
