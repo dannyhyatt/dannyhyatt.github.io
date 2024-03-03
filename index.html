@@ -16,7 +16,6 @@ Hello, fellow human, thanks for checking out my source code!
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
     <style>
       .profile-img {
         max-width: 384px; 
@@ -138,10 +137,6 @@ Hello, fellow human, thanks for checking out my source code!
         /* box-shadow: 0 0 4px 4px #fff inset; */
       }
 
-      .social-link-wrapper:hover, .social-link-wrapper:active, .social-link-wrapper:focus {
-        /* border: 1px solid white; */
-      }
-
       #github:hover, #github:active, #github:focus {
         background-color: black;
       }
@@ -151,7 +146,7 @@ Hello, fellow human, thanks for checking out my source code!
         border-color: #2d76b0;
       }
 
-      #instagram:hover, #instagram:active, #instagram:focus  {
+      .social-link-wrapper:hover > #instagram, .social-link-wrapper:active > #instagram, .social-link-wrapper:focus > #instagram  {
         background-color: #00000000;
         border-width: 0;
       }
@@ -162,7 +157,7 @@ Hello, fellow human, thanks for checking out my source code!
         transition: opacity 0.3s ease-in 0s;
       }
 
-      .social-link-wrapper:hover > .social-link-bg--instagram {
+      .social-link-wrapper:hover > .social-link-bg--instagram, .social-link-wrapper:active > .social-link-bg--instagram, .social-link-wrapper:focus > .social-link-bg--instagram, .social-link-wrapper:focus-within > .social-link-bg--instagram {
         opacity: 100%;
       }
 
@@ -232,7 +227,7 @@ Hello, fellow human, thanks for checking out my source code!
           fill: white;
           box-shadow: 0px 0px 14px 1px rgba(255, 255, 255, 0.7);
           background-color: transparent;
-          -webkit-mask-image: -webkit-radial-gradient(white, black);
+          mask-image: -webkit-radial-gradient(white, black);
 
         }
         #profile-img-jpg {
@@ -263,10 +258,6 @@ Hello, fellow human, thanks for checking out my source code!
         .social
         .social-link--linkedin:hover, .social-link--instagram:hover {
           filter: none;
-        }
-        .social-link:hover:not(#github), .social-link:active:not(#github), .social-link:focus:not(#github) {
-          /* box-shadow: 0px 0px 6px 1px rgba(255, 255, 255, 1); */
-          /* box-shadow: 0 0 8px 8px white inset; */
         }
       }
 
@@ -330,7 +321,7 @@ Hello, fellow human, thanks for checking out my source code!
           </h1>
           <p class="subtitle my-5">
             I'm a <strong>college student</strong> at <strong>UMD</strong> pursing a degree in <strong>information science</strong>. If you'd like to learn more about me, you can check out my
-            <a href="/asset/files/dannyhyatt_resume.pdf">resume</a>. If you'd like to get in touch, <a href="mailto:hi@dannyhyatt.com">email me</a> or contact me via social media.
+            <a href="/asset/files/daniel_hyatt_resume.pdf">resume</a>. If you'd like to get in touch, <a href="mailto:hi@dannyhyatt.com">email me</a> or contact me via social media.
           </p>
         </span>
 
@@ -381,7 +372,7 @@ Hello, fellow human, thanks for checking out my source code!
         </h1>
         <p class="subtitle my-5">
           I'm a <strong>college student</strong> at <strong>UMD</strong> pursing a degree in <strong>information science</strong>. If you'd like to learn more about me, you can check out my
-          <a href="/asset/files/dannyhyatt_resume.pdf">resume</a>. If you'd like to get in touch, <a href="mailto:hi@dannyhyatt.com">email me</a> or contact me via social media.
+          <a href="/asset/files/daniel_hyatt_resume.pdf">resume</a>. If you'd like to get in touch, <a href="mailto:hi@dannyhyatt.com">email me</a> or contact me via social media.
         </p>
     </div>
   </section>

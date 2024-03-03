@@ -1,7 +1,3 @@
-<!--
-  hey !!
--->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,11 +8,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
     <style>
       html {
-        /* saving this here because i like this color */
-        /* background-color: #f9d9d9; */
         background-color: #f9f9f9;
         scroll-behavior: smooth;
       }
@@ -136,82 +129,6 @@
         }
       }
 
-      .skill-explanation {
-        display:none;
-        position: absolute;
-        top: 0;
-        margin-left: 16px;
-      }
-      .skill:target .skill-explanation {
-        display: inline !important;
-        padding-top: 3em;
-        margin-left: calc(4rem + 12px);
-      }
-      .skill:target .skill-thumbnail img {
-        border-right: 2px solid #4a4a4a !important;
-        padding-right: 0.5rem;
-      }
-      .skill:hover .skill-thumbnail img {
-        border-right: 2px solid #4a4a4a99;
-        padding-right: 0.5rem;
-      }
-      .skill-thumbnail img {
-        display: inline;
-        height: 4rem;
-        width: 4rem;
-        padding: 0.5rem;
-        padding-right: calc(0.5rem + 2px);
-        object-fit: contain;
-        position: absolute;
-      }
-      .skill {
-        display: block;
-      }
-      #skills {
-        width: 100%;
-        position: relative;
-        height: 28rem;
-      }
-
-      /* todo display html when no id is selected */
-      /* #html-skill:not(#html-skill:target) .skill-explanation {
-          display: inline !important;
-          padding-top: 2.6em;
-          margin-left: calc(4rem + 12px);
-      } */
-
-      #html-skill .skill-thumbnail img {
-        margin-top: 4rem;
-      }
-      #java-skill .skill-thumbnail img {
-        top: 4rem;
-        margin-top: 4rem;
-      }
-      #python-skill .skill-thumbnail img {
-        top: 8rem;
-        margin-top: 4rem;
-      }
-      #flutter-skill .skill-thumbnail img {
-        top: 12rem;
-        margin-top: 4rem;
-      }
-      #go-skill .skill-thumbnail img {
-        top: 16rem;
-        margin-top: 4rem;
-      }
-      #postgres-skill .skill-thumbnail img {
-        top: 20rem;
-        margin-top: 4rem;
-      }
-
-      @media screen and (max-width: 748px) {
-        .skill-thumbnail img {
-          height: 3.5rem;
-          width: 3.5rem;
-        }
-      }
-
-
       #fibonacci-path {
         stroke: #363636;
         stroke-dasharray: 500;
@@ -226,7 +143,7 @@
       }
 
       :target div h3:before {
-        content: '> ';
+        content: '# ';
       }
       @media (prefers-color-scheme: dark) {
         html {
@@ -242,7 +159,7 @@
         .title, h1, .content h1, .content h3 {
           color: #efefef;
         }
-        .subtitle, .subtitle strong, p {
+        .subtitle, .subtitle strong, p, details, summary {
           color: #fff;
         }
         .animated-underline::before {
@@ -254,27 +171,16 @@
         .animated-bold span {
           color: #eee;
         }
-        #html-skill a img {
-          filter: brightness(0%) invert();
-        }
-        .skill:target .skill-thumbnail img {
-          border-right: 2px solid #eee !important;
-        }
-        .skill:hover .skill-thumbnail img {
-          border-right: 2px solid #eee;
-        }
-        .skill-explanation {
-          color: #efefef;
-        }
         .project-img {
           mix-blend-mode: unset;
         }
-        #scriber div {
-          mix-blend-mode: difference;
-          filter: brightness(150%);
+        #bespeak div .project-img {
+          filter: invert(1);
+          mix-blend-mode: color-dodge;
         }
-        #scriber div img {
-          filter: invert();
+        #communicad div .project-img {
+          filter: invert(1) hue-rotate(180deg);
+          mix-blend-mode: color-dodge;
         }
         #kids-for-code div img {
           filter: contrast(0) brightness(100);
@@ -289,12 +195,25 @@
           stroke-dashoffset: 0;
         }
       }
+      details>summary {
+        list-style: none;
+      }
+      summary::-webkit-details-marker {
+        display: none
+      }
+      summary::after {
+        content: '[+]';
+        font-family: monospace;
+      }
+      details[open] summary:after {
+        content: "[-]";
+      }
     </style>
 </head> 
 <body>
   <section class="section">
     <div class="columns">
-      <div class="column is-offset-4-desktop is-4-desktop is-offset-2-tablet is-8-tablet is-size-5 content">
+      <div class="column is-offset-3-desktop is-6-desktop is-offset-2-tablet is-8-tablet is-size-5 content">
         <figure class="image">
           <svg style="height: 300px; width: 100%; transform: scale(1.5);" xmlns = "http://www.w3.org/2000/svg" version = "1.1" viewBox="0 0 35 34">
                     <path id="fibonacci-path" stroke = "#ffffff" stroke-width = "0.5" viewBox="0 0 35 34" fill = "none" d = "
@@ -313,49 +232,32 @@
         <h1 class="title">
           Portfolio
         </h1>
-        <p class="subtitle my-5">
-          I <u class="animated-underline"><span></span>design</u> and <b class="animated-bold"><span>d</span><span>e</span><span>v</span><span>e</span><span>l</span><span>o</span><span>p</span></b> simple UIs. Privacy and accessibility are my ethos when developing software.
-        </p>
-        <div id="skills">
-        <h3 style="position: absolute; margin-top: 0.5rem">Skills</h3>
-          <div class="skill" id="html-skill">
-            <a href="#html-skill" class="skill-thumbnail" title="Web"><img src="/asset/img/html.svg"></a>
-            <div class="skill-explanation">
-              HTML, CSS and JavaScript are what I use to build websites. I try to keep my webpages as light as possible and avoid JavaScript when I can. In fact, this website is completely JavaScript-free.
-            </div>
+        <div class="columns" id="bespeak">
+          <div class="column is-3 is-12-mobile">
+            <img class="project-img" src="/asset/img/bespeak-logo.png">
           </div>
-          <div class="skill" id="java-skill">
-            <a href="#java-skill" class="skill-thumbnail" title="Java"><img src="/asset/img/java.svg"></a>
-            <div class="skill-explanation">
-              My experience in Java comes from Android apps, Swing desktop applications and Spring servers. While, I've never received any formal education on Java (or any programming language), I did pass the Advanced Placement exam for Java (AP Computer Science A).
-            </div>
-          </div>
-          <div class="skill" id="python-skill">
-            <a href="#python-skill" class="skill-thumbnail" title="Python"><img src="/asset/img/python.svg"></a>
-            <div class="skill-explanation">
-              I've used Python during hackathons to create quick servers for apps with Flask. I'm also exploring TensorFlow and artificial intelligence with Python, and passed the TensorFlow developer exam. The certificate is on my LinkedIn account.
-            </div>
-          </div>
-          <div class="skill" id="flutter-skill">
-            <a href="#flutter-skill" class="skill-thumbnail" title="Flutter"><img src="/asset/img/flutter.svg"></a>
-            <div class="skill-explanation">
-              Flutter is one of my more recent skills. I've <a href="#mcps-sidekick">published one app</a> with it and built many more.
-            </div>
-          </div>
-          <div class="skill" id="go-skill">
-            <a href="#go-skill" class="skill-thumbnail" title="Go"><img src="/asset/img/gopher.svg"></a>
-            <div class="skill-explanation">
-              Go is my language of choice for creating servers. I used it to make a <a href="#scriber">blogging website</a> called Scriber as a learning project. I love Go's syntax and simplicity.
-            </div>
-          </div>
-          <div class="skill" id="postgres-skill">
-            <a href="#postgres-skill" class="skill-thumbnail" title="PostgreSQL"><img src="/asset/img/postgres.svg"></a>
-            <div class="skill-explanation">
-              PostgreSQL is the relational database I have the most experience with. I used it to build a <a href="#scriber">blogging website</a> called Scriber. I can also use MySQL, though I have only used its basic features.
-            </div>
+          <div class="column is-9 is-12-mobile">
+            <h3>Bespeak</h3>
+            <p>
+              Bespeak is a project I'm currently working on. It's a writing/reading platform that I'm building with Next.js, Tailwind CSS, TipTap and Supabase.
+              It's still in development, but you can see the current progress <a href="https://bespeak-beta.vercel.app">here</a>. Please note that I likely did not write
+              the articles on there as of now - they're just placeholders for testing purposes taken from other sites.
+            </p>
           </div>
         </div>
-        <h3>Projects</h3>
+        <div class="columns" id="communicad">
+          <div class="column is-3 is-12-mobile">
+            <img class="project-img" src="https://beta.communicad.io/assets/logo.png">
+          </div>
+          <div class="column is-9 is-12-mobile">
+            <h3>CommuniCAD</h3>
+            <p>
+              CommuniCAD is a startup company that I co-founded. I was the lead developer and designer. I built the website with React, MUI/Joy UI, and Three.js.
+              If you'd like to try and use some of the product on a demo part, click <a href="https://beta.communicad.io/part?id=hHc3KeuhlH7qWXKmqqwT">here</a>. 
+              To access the part, enter your name, click on the "Revision 1" dropdown and click the file, "ScrewDriver.stl." I've left an annotation on the part for you to see.
+            </p>
+          </div>
+        </div>
         <div class="columns" id="kids-for-code">
           <div class="column is-3 is-12-mobile">
             <img class="project-img" src="/asset/img/kfc-logo.png">
@@ -364,23 +266,8 @@
             <h3>Kids For Code</h3>
             <p>
               Kids For Code is an organization I volunteered at to teach HTML/CSS and Java to young kids.
-              I also maintain their website, <a href="https://kidsforcode.org/">kidsforcode.org</a>, which
-              I built with Bootstrap 4.
-            </p>
-          </div>
-        </div>
-        <div class="columns" id="scriber">
-          <div class="column is-3 is-12-mobile project-img">
-            <img class="project-img" src="/asset/img/scriber-192x192.png">
-          </div>
-          <div class="column is-9 is-12-mobile">
-            <h3>Scriber</h3>
-            <p>
-              I started Scriber because I liked Medium, but didn't like how they aren't respecting of privacy,
-              have slow webpages, and require a subscription to read more than three articles per month.
-              Scriber is a free blogging platform with aspects of social media incorporated, like post likes,
-              comments, bookmarks and trending posts. Although it was just a learning project, I'm satisfied with
-              how it turned out. Check out a demo <a href="https://scriber.cc">here</a>.
+              I also maintained their website, which I built with Bootstrap 4. It's been updated and maintained
+              since I've left, but you can see original site I made myself <a href="https://kidsforcode.dannyhyatt.com">here</a>.
             </p>
           </div>
         </div>
@@ -390,12 +277,18 @@
           </div>
           <div class="column is-9 is-12-mobile">
             <h3>MCPS Sidekick</h3>
-            <p>
-              My school district, MCPS, provides a grade viewer app that doesn't look very appealing.
+            <details>
+              <summary>
+              In my junior year of high school, my school district, MCPS, provides a grade viewer app that doesn't look very appealing.
               I created an alternative that is not only more visually appealing, but adds a key feature - a grade calculator.
               Students can add an assignment - for example a test - and calculate the score they need to improve or maintain
-              their letter grade. It is available <a href="https://mcps.app">here</a>.
-            </p>
+              their letter grade. Click to view some screenshots.
+              </summary>
+              <div style="display: flex; gap: 2rem; margin-top: 2rem;">
+                <img src="/asset/img/mcps_sidekick_1.png" style="width: auto; max-height: 33vh;">
+                <img src="/asset/img/mcps_sidekick_2.png" style="width: auto; max-height: 33vh;">
+              </div>
+            </details>
           </div>
         </div>
       </div>
